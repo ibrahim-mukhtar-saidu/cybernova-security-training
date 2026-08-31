@@ -168,6 +168,37 @@ patterns and metadata to determine its likely type.
 
 This is particularly useful during Linux security investigations.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Directory and file inspection
+- File metadata analysis
+- File-type identification with `file`
+- Binary-versus-text classification
+- Output filtering
+- Candidate artifact identification
+- Command-line investigation
+- Result validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied directory and enumerate the available files.
+3. Determine that the challenge requires identifying the file containing
+   human-readable content.
+4. Inspect candidate files using appropriate command-line utilities.
+5. Use file-type information to distinguish text content from binary data.
+6. Filter the results to isolate the relevant human-readable artifact.
+7. Validate the identified content against the challenge requirements.
+8. Confirm that the result represents the required next-stage training
+   credential.
+9. Avoid reproducing the credential in public documentation.
+10. Record only the methodology and sanitized evidence.
+
 ## Security Concept
 File-Type Identification
 
@@ -328,7 +359,7 @@ Keep original sensitive evidence locally if required.
 The purpose of the screenshot is to demonstrate methodology and successful
 execution.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential recovered during this exercise is intentionally excluded.
 
@@ -339,7 +370,7 @@ Public documentation uses:
 This repository demonstrates the investigation process rather than exposing
 authentication material.
 
-## Ethical Scope
+## Ethical Use
 
 All activity documented here was performed within the authorized
 OverTheWire Bandit training environment.
