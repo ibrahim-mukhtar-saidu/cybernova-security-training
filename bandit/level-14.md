@@ -365,6 +365,25 @@ Actual credentials must not appear in published evidence.
 
 ---
 
+## Investigation Approach
+
+The investigation focused on interacting with an authorized service listening
+on the local system.
+
+The workflow was:
+
+1. Confirm the current authentication context.
+2. Identify the expected local service endpoint.
+3. Establish a TCP connection to the authorized port.
+4. Provide the required training credential through the expected input channel.
+5. Observe the service response.
+6. Validate the returned result.
+7. Avoid unnecessary interaction with unrelated services.
+8. Protect the recovered credential from public disclosure.
+
+The exercise demonstrates basic network-service investigation, TCP client
+interaction, authentication exchange, and evidence validation.
+
 ## Security Concepts
 
 ### TCP
@@ -401,6 +420,15 @@ Identifying listening services and their associated ports is a foundational
 network-security activity.
 
 ---
+
+## MITRE ATT&CK Relevance
+
+The exercise demonstrates interaction with an authorized network service over
+TCP.
+
+The activity provides defensive context for understanding service discovery,
+network connections, and authentication monitoring. It should not be treated
+as a direct reproduction of a specific adversary procedure.
 
 ## Skills Demonstrated
 
@@ -644,6 +672,27 @@ The credential was used only within the authorized OverTheWire Bandit
 training environment.
 
 ---
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical / Lab Scope
 

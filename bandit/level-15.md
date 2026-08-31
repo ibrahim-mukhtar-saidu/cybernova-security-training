@@ -45,6 +45,7 @@ The environment was first inspected to confirm the authenticated identity and wo
 whoami
 pwd
 hostname
+```
 
 The commands confirmed that the session was operating as:
 
@@ -56,7 +57,7 @@ The home directory was:
 
 The host was also confirmed as the Bandit training server.
 
-Credential File Investigation
+## Credential File Investigation
 
 The home directory contained a file associated with the previous authentication level:
 
@@ -70,7 +71,7 @@ Its permissions indicated that it was readable by the bandit15 user.
 
 The file was treated as sensitive authentication material and was not included in the public project documentation.
 
-Understanding the Network Service
+## Understanding the Network Service
 
 The Level 15 service listens on:
 
@@ -96,7 +97,7 @@ This does not prevent communication with the authorized training service.
 
 The important observation was that TLS negotiation succeeded and the service was ready to receive application data.
 
-Why the Initial Connection Appeared to Hang
+## Why the Initial Connection Appeared to Hang
 
 Running:
 
@@ -112,7 +113,7 @@ This indicates that the client was waiting for input from the connected service.
 
 Therefore, the credential needed to be supplied through the established TLS connection.
 
-TLS Authentication Procedure
+## TLS Authentication Procedure
 
 The credential obtained during the previous Bandit level was supplied to the TLS service using OpenSSL.
 
@@ -129,7 +130,7 @@ Correct!
 
 This confirmed that the submitted credential was accepted.
 
-Result
+## Result
 
 The service returned the credential required for the next Bandit level.
 
@@ -140,7 +141,7 @@ The credential was validated only within the authorized OverTheWire Bandit envir
 
 It is intentionally excluded from this public repository.
 
-Technical Analysis
+## Technical Analysis
 
 This exercise demonstrated the difference between ordinary TCP communication and TLS-protected communication.
 
@@ -169,7 +170,43 @@ Previous Level Credential
           |
           v
     Next-Level Credential
-TLS Certificate Observations
+```
+
+## Investigation Approach
+
+The investigation followed a protocol-aware workflow rather than treating the reachable TCP service as a generic plaintext endpoint.
+
+The workflow was:
+
+1. Confirm the authenticated identity and host context.
+2. Inspect the available credential material without publishing it.
+3. Identify the target service and TCP port.
+4. Determine that the service expects TLS.
+5. Establish a TLS session with `openssl s_client`.
+6. Observe and interpret the certificate and verification behavior.
+7. Submit the authorized credential through the encrypted connection.
+8. Validate the application response.
+9. Redact authentication material from public documentation.
+
+This approach demonstrates protocol identification, TLS service investigation, authentication validation, and secure evidence handling.
+
+## Techniques and Commands
+
+The primary command-line techniques demonstrated were:
+
+```bash
+whoami
+pwd
+hostname
+ls -la
+openssl s_client -connect localhost:30001
+printf '%s\n' '<REDACTED_PREVIOUS_LEVEL_CREDENTIAL>' | \
+openssl s_client -connect localhost:30001 -quiet
+```
+
+These commands demonstrate identity verification, environment discovery, filesystem inspection, TLS connection establishment, encrypted credential submission, and service-response validation.
+
+## TLS Certificate Observations
 
 The server presented a self-signed certificate.
 
@@ -186,7 +223,7 @@ The self-signed certificate is expected in this controlled training environment.
 
 In a production environment, certificate validation would be an important security control.
 
-Security Significance
+## Security Significance
 
 The exercise demonstrates several important defensive security concepts.
 
@@ -214,7 +251,7 @@ Credentials should not be unnecessarily displayed, copied into logs, screenshots
 
 The actual Bandit credentials were therefore redacted from this documentation.
 
-Command-Line Investigation Skills
+## Command-Line Investigation Skills
 
 The exercise reinforced practical Linux and security-analysis skills including:
 
@@ -227,7 +264,7 @@ printf
 
 These commands support identity verification, environment discovery, filesystem inspection, and secure network-service interaction.
 
-Evidence Validation
+## Evidence Validation
 
 The result was validated through the service response:
 
@@ -237,7 +274,7 @@ This provides direct evidence that the submitted credential was accepted by the 
 
 The actual credential is not required as evidence in the public repository.
 
-Credential-Handling Policy
+## Credential-Handling Policy
 
 Credentials discovered during this exercise are considered sensitive authentication material.
 
@@ -257,7 +294,7 @@ Credential: [REDACTED]
 
 Only the methodology and sanitized validation result should be documented.
 
-SOC / Blue Team Relevance
+## Defensive / SOC Relevance
 
 Although this is a CTF exercise, the underlying skills have practical SOC relevance.
 
@@ -274,23 +311,19 @@ Preserve useful evidence without exposing secrets
 
 These skills contribute to network investigation, incident response, security monitoring, and defensive troubleshooting.
 
-MITRE ATT&CK Relevance
+## MITRE ATT&CK Relevance
 
-This exercise is primarily a Linux, networking, and authentication training exercise rather than a direct simulation of malicious activity.
+This exercise is primarily a controlled Linux, networking, TLS, and authentication training exercise rather than a direct simulation of adversary behavior.
 
-Potentially related ATT&CK concepts include:
+A limited conceptual ATT&CK relationship is:
 
-T1021 — Remote Services
+- **T1078 — Valid Accounts:** Relevant as authentication context because the exercise requires a valid credential to access the next stage of the authorized training environment.
 
-The exercise provides practical understanding of network-based service communication and authentication.
+This mapping is presented as defensive analytical context rather than a claim that the Bandit exercise reproduces the adversary technique.
 
-T1078 — Valid Accounts
+The exercise does not provide sufficient evidence to claim a direct **T1021 — Remote Services** procedure because the target service is accessed locally through `localhost:30001`.
 
-The exercise demonstrates the importance of authentication credentials and the security implications of valid credentials.
-
-These mappings are conceptual training relationships rather than claims that the Bandit exercise itself represents malicious activity.
-
-Lessons Learned
+## Lessons Learned
 
 The exercise demonstrated that:
 
@@ -304,7 +337,7 @@ Authentication credentials should be treated as sensitive information.
 Evidence can be validated without publishing the secret itself.
 Protocol identification is an important part of network investigation.
 Secure credential handling is part of professional security documentation.
-Limitations
+## Limitations
 
 This exercise uses a controlled OverTheWire training environment.
 
@@ -326,7 +359,7 @@ Centralized identity providers
 
 Therefore, the techniques demonstrated here should be considered foundational rather than a complete TLS troubleshooting methodology.
 
-Ethical Use
+## Ethical Use
 
 All techniques documented here were performed within the authorized OverTheWire Bandit training environment.
 
@@ -334,7 +367,7 @@ The commands and techniques should only be used against systems for which explic
 
 Unauthorized credential collection, network probing, or authentication attempts against third-party systems are not permitted.
 
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 15 → 16 objective.
 

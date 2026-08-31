@@ -4,6 +4,20 @@
 
 Access the Bandit Level 19 environment when the normal interactive SSH session is restricted, and retrieve the required challenge credential without exposing sensitive information in the repository.
 
+## Environment
+
+| Item | Details |
+|---|---|
+| Platform | OverTheWire Bandit |
+| Source System | Parrot OS |
+| Shell | Bash |
+| Protocol | SSH |
+| SSH Port | 2220 |
+| Starting Account | bandit18 |
+| Target Account | bandit19 |
+| Authorization | Authorized cybersecurity training lab |
+| Investigation Type | Remote command execution and shell access |
+
 ## Investigation Approach
 
 The challenge demonstrated how an SSH account can restrict normal interactive access while still allowing specific remote commands to be executed.
@@ -110,6 +124,27 @@ Private credentials and SSH keys should remain outside the public repository.
 ## Learning Outcome
 
 This level strengthened practical understanding of SSH authentication, restricted environments, non-interactive remote command execution, access control, and secure credential handling.
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical Use
 

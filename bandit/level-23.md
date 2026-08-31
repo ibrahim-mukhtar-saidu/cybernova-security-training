@@ -4,6 +4,20 @@
 
 Analyze a cron-executed script and understand how automated execution can be used to process files within a controlled Linux environment.
 
+## Environment
+
+| Item | Details |
+|---|---|
+| Platform | OverTheWire Bandit |
+| Source System | Parrot OS |
+| Shell | Bash |
+| Protocol | SSH |
+| SSH Port | 2220 |
+| Starting Account | bandit23 |
+| Target Account | bandit24 |
+| Authorization | Authorized cybersecurity training lab |
+| Investigation Type | Scheduled-task and script analysis |
+
 ## Investigation Approach
 
 The investigation focused on:
@@ -61,6 +75,27 @@ Challenge credentials should remain outside the repository or be redacted before
 ## Learning Outcome
 
 This level strengthened practical understanding of Linux cron, shell scripting, file permissions, automated execution, temporary-file handling, process context, and defensive monitoring of scheduled activity.
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical Use
 

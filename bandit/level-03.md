@@ -173,7 +173,7 @@ convention rather than an access-control mechanism.
 A user with sufficient filesystem permissions can still discover and access
 such files.
 
-Security Concept
+## Security Concept
 Hidden Files Are Not Access Control
 
 A common security misconception is that hiding a file makes its contents
@@ -201,7 +201,7 @@ Encryption
 Authentication
 Least privilege
 Secure secret-management mechanisms
-Security Investigation Perspective
+## Security Investigation Perspective
 
 During a host-based investigation, analysts should not rely exclusively on
 standard directory listings.
@@ -226,7 +226,7 @@ Persistence artifacts
 Development files
 Credentials accidentally stored on disk
 Malicious files attempting to avoid casual discovery
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 Although this exercise is a controlled CTF challenge, the underlying concept
 has practical defensive relevance.
@@ -277,7 +277,16 @@ Persistence investigation
 The important lesson is that filesystem visibility and filesystem access
 control are separate concepts.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+The hidden-file discovery activity is conceptually related to
+**T1083 — File and Directory Discovery**.
+
+The exercise demonstrates how filesystem enumeration can reveal objects that
+are not displayed by a basic directory listing. The mapping is provided as
+defensive context rather than as a direct adversary emulation.
+
+## Skills Demonstrated
 
 This exercise demonstrated practical ability to:
 
@@ -290,7 +299,7 @@ Read files using cat.
 Distinguish visibility from access control.
 Handle credentials safely.
 Document a repeatable investigation process.
-Evidence
+## Evidence
 
 Recommended evidence for this level includes screenshots showing:
 
@@ -319,7 +328,7 @@ but the credential should not be retained in the public repository.
 Suggested filename:
 
 evidence/screenshots/bandit-03-credential-retrieval-redacted.png
-Evidence Handling
+## Evidence Handling
 
 Screenshots containing credentials should not be uploaded publicly in their
 original form.
@@ -335,7 +344,7 @@ Never publish private SSH keys.
 The goal of evidence collection is to demonstrate the investigation process,
 not disclose secrets.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential obtained during this exercise is intentionally excluded from
 this report.
@@ -349,7 +358,7 @@ The actual credential should never be committed to Git.
 If the credential appears in a screenshot, the screenshot should be redacted
 before being added to the repository.
 
-Ethical Scope
+## Ethical Scope
 
 This exercise was performed exclusively within the authorized OverTheWire
 Bandit training environment.
@@ -357,7 +366,7 @@ Bandit training environment.
 The techniques described here should only be used against systems for which
 explicit authorization has been provided.
 
-Lessons Learned
+## Lessons Learned
 1. Hidden does not mean protected
 
 A file beginning with . is hidden from normal directory listings, but it
@@ -394,7 +403,7 @@ Threat hunting
 Linux security monitoring
 Server administration
 Digital forensics
-Knowledge Notes
+## Knowledge Notes
 Hidden Files
 
 Linux commonly treats filenames beginning with . as hidden when using
@@ -423,7 +432,7 @@ find . -maxdepth 2 -type f
 
 Searches for regular files within a limited directory depth.
 
-Investigation Workflow
+## Investigation Workflow
 
 The investigation followed this process:
 
@@ -452,7 +461,28 @@ Credential protected/redacted
 This workflow demonstrates a repeatable approach to Linux filesystem
 investigation.
 
-Training Outcome
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Training Outcome
 
 Successfully completed the Bandit Level 03 → 04 objective.
 

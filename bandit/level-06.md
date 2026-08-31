@@ -52,6 +52,24 @@ must translate descriptive requirements into command-line search criteria.
 
 ---
 
+## Investigation Approach
+
+The investigation translated the challenge requirements into specific filesystem search predicates.
+
+The workflow was:
+
+1. Establish the current filesystem context.
+2. Identify the required owner, group, file type, and size.
+3. Perform a system-wide recursive search.
+4. Apply ownership and group filters.
+5. Apply the file-size filter.
+6. Handle expected permission-denied messages.
+7. Validate the candidate with `ls -l` and `file`.
+8. Inspect the validated artifact.
+9. Redact the recovered credential from public documentation.
+
+This approach demonstrates progressive filtering of a large filesystem search space into a small, verifiable candidate set.
+
 ## Investigation Objective
 
 The investigation can be represented as:
@@ -137,6 +155,23 @@ find / -type f -user bandit7 -group bandit6 -size 33c
 
 The exact search criteria should be based on the challenge requirements
 provided by the training environment.
+
+## Techniques and Commands
+
+The primary command-line techniques demonstrated were:
+
+```bash
+pwd
+ls -la
+find / -type f
+find / -type f -user bandit7 -group bandit6 -size 33c
+find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+ls -l <candidate>
+file <candidate>
+cat <candidate>
+```
+
+These commands demonstrate recursive filesystem discovery, ownership and group filtering, exact byte-size matching, permission-error handling, candidate validation, and controlled artifact inspection.
 
 Command Explanation
 find
@@ -304,7 +339,7 @@ Size requirement
 The resulting search is repeatable, auditable, and significantly more
 efficient.
 
-Security Concept
+## Security Concept
 Filesystem Enumeration
 
 Filesystem enumeration is the process of identifying files, directories,
@@ -407,7 +442,7 @@ indicator of suspicious activity.
 For example, an attacker who has obtained limited shell access may attempt to
 search the filesystem for credentials or privileged files.
 
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 Although this is a CTF exercise, the underlying methodology has direct SOC
 relevance.
@@ -459,7 +494,19 @@ Are suspicious artifacts present?
 
 These questions are common during Linux host investigations.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+This exercise is a controlled filesystem-investigation challenge rather than a direct reproduction of adversary behavior.
+
+The strongest MITRE ATT&CK reference is:
+
+- **T1083 — File and Directory Discovery**: relevant to the filesystem-enumeration concept demonstrated by the investigation.
+
+From a defensive perspective, understanding filesystem discovery helps analysts recognize and investigate similar activity on Linux hosts.
+
+This mapping is therefore a defensive analytical reference, not a claim that the Bandit challenge directly simulates an ATT&CK procedure.
+
+## Skills Demonstrated
 Linux
 Filesystem navigation
 Recursive filesystem searching
@@ -482,7 +529,7 @@ ls
 file
 cat
 Bash redirection
-Evidence Collection
+## Evidence Collection
 
 Recommended evidence for this level includes screenshots showing the
 investigation process without exposing credentials.
@@ -501,7 +548,7 @@ Candidate validation.
 
 Do not capture or publish the actual credential.
 
-Evidence Reference
+## Evidence Reference
 Evidence	Purpose
 bandit-06-filesystem-search.png	Demonstrates filesystem enumeration
 Terminal search output	Shows filtering methodology
@@ -511,7 +558,7 @@ file output	Demonstrates artifact validation
 If screenshots are not available, the repository should not claim that they
 exist.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential obtained during this exercise is authentication material for
 the training environment.
@@ -529,7 +576,28 @@ This reflects a basic security principle:
 
 Sensitive authentication material should not be unnecessarily exposed.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 All activity documented in this report was performed against the authorized
 OverTheWire Bandit training environment.
@@ -544,7 +612,7 @@ Authorized CTF environments
 Defensive security training
 Security research in controlled environments
 Professional skills development
-Investigation Methodology
+## Investigation Methodology
 
 The investigation followed a repeatable process:
 
@@ -568,7 +636,7 @@ Document the investigation
 
 This methodology is transferable to real-world security operations.
 
-Lessons Learned
+## Lessons Learned
 System-wide searches are more effective when precise filters are applied.
 File ownership can be used as an investigation criterion.
 Group ownership provides an additional validation attribute.
@@ -582,7 +650,7 @@ Linux command-line investigation skills are highly transferable to
 security operations.
 Combining multiple independent attributes produces more reliable search
 results.
-Knowledge Notes
+## Knowledge Notes
 
 Related concepts are documented in:
 
@@ -598,7 +666,7 @@ Group permissions
 Least privilege
 Filesystem enumeration
 Host-based investigation
-Professional Relevance
+## Professional Relevance
 
 This exercise contributes to practical skills relevant to entry-level
 cybersecurity and SOC roles.
@@ -618,7 +686,7 @@ The exercise also demonstrates the ability to explain not only what command
 was executed, but why the command was appropriate and what security
 concept it demonstrates.
 
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 06 → 07 objective.
 

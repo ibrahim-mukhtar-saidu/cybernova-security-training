@@ -381,6 +381,15 @@ Context remains important.
 
 ---
 
+## MITRE ATT&CK Relevance
+
+The exercise focuses on recognizing and reversing ROT13 character
+substitution.
+
+This is not a direct reproduction of a specific ATT&CK procedure. It provides
+useful defensive context for recognizing simple obfuscation and transformed
+content during security investigations.
+
 ## Skills Demonstrated
 
 ### Linux
@@ -501,6 +510,27 @@ The credential was used only to progress through the authorized OverTheWire
 Bandit environment.
 
 ---
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical / Lab Scope
 

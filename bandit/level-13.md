@@ -302,6 +302,27 @@ published evidence.
 
 ---
 
+## Investigation Approach
+
+The investigation focused on identifying and safely using an SSH private key
+provided by the authorized training environment.
+
+The workflow was:
+
+1. Inspect the available files.
+2. Identify the private-key artifact.
+3. Validate the artifact type.
+4. Inspect its filesystem permissions.
+5. Correct permissions when required by the SSH client.
+6. Use the key explicitly with SSH.
+7. Specify the authorized destination account and port.
+8. Validate successful authentication.
+9. Avoid copying or publishing the private key.
+10. Document the authentication mechanism without exposing credential material.
+
+The investigation demonstrates both offensive-awareness and defensive
+understanding of SSH key-based authentication.
+
 ## Security Concepts
 
 ### Public-Key Cryptography
@@ -338,6 +359,16 @@ Private keys should be treated as secrets even when they are generated for
 temporary training environments.
 
 ---
+
+## MITRE ATT&CK Relevance
+
+The exercise focuses on SSH private-key identification and key-based
+authentication.
+
+The defensive security relevance includes understanding how exposed private
+keys can enable unauthorized access. The exercise is therefore useful for
+understanding credential-access and valid-account risks, while the exact
+Bandit procedure should not be treated as a direct adversary emulation.
 
 ## Skills Demonstrated
 
@@ -548,6 +579,27 @@ Simply deleting a secret from the latest working tree may not remove it from
 Git history.
 
 ---
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical / Lab Scope
 

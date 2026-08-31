@@ -44,7 +44,7 @@ The supplied Bandit Level 00 credential is used for authentication.
 
 Credential values are intentionally omitted from this public repository.
 
-Investigation
+## Investigation
 
 After obtaining a shell, the first step is to inspect the current directory:
 
@@ -120,7 +120,29 @@ Next-Level Authentication
 
 The challenge is intentionally simple, but the workflow is important because the same pattern appears in real Linux administration, incident response, and security investigations.
 
-Security Concept
+## Investigation Approach
+
+The investigation began by establishing authenticated access to the
+authorized Bandit training environment and confirming the current user and
+working directory.
+
+The workflow was:
+
+1. Authenticate to the assigned Bandit account.
+2. Confirm the current user context.
+3. Inspect the initial filesystem location.
+4. Identify the artifact relevant to the challenge.
+5. Apply the minimum commands necessary to validate the finding.
+6. Use the recovered training credential only for progression to the next
+   authorized level.
+7. Avoid publishing authentication material.
+8. Document the investigation methodology and security concepts demonstrated.
+
+The emphasis is on establishing context before interacting with an artifact,
+using repeatable command-line investigation techniques, and protecting
+sensitive training credentials.
+
+## Security Concept
 Filesystem Enumeration
 
 Before interacting with files on a Linux host, an analyst should understand what exists in the current environment.
@@ -137,7 +159,16 @@ Temporary files
 
 The security significance depends on the permissions and sensitivity of the discovered files.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+This introductory exercise does not directly reproduce a specific adversary
+procedure. However, the filesystem and environment-discovery activities are
+conceptually related to **T1083 — File and Directory Discovery**.
+
+The mapping is provided as defensive context rather than as a claim that the
+Bandit challenge itself is an adversary simulation.
+
+## Skills Demonstrated
 SSH authentication
 Linux command-line navigation
 Directory enumeration
@@ -145,7 +176,7 @@ File identification
 File content inspection
 Basic credential handling
 Secure documentation practices
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 The same Linux commands used during this exercise can be relevant during authorized defensive investigations.
 
@@ -159,14 +190,14 @@ Determine whether sensitive information is stored insecurely.
 
 The important defensive lesson is that file discovery and permission analysis are foundational host-investigation skills.
 
-Lessons Learned
+## Lessons Learned
 SSH provides encrypted remote access to Linux systems.
 Directory enumeration should normally be performed before investigating files.
 ls -la provides useful visibility into both normal and hidden files.
 File contents should be treated as potentially sensitive information.
 Credentials discovered during training should not be published publicly.
 A simple, repeatable investigation workflow is useful for more advanced security analysis.
-Evidence
+## Evidence
 
 Evidence for this level should demonstrate the technical workflow without exposing authentication secrets.
 
@@ -177,7 +208,7 @@ evidence/screenshots/
     ├── 01-ssh-login.png
     ├── 02-directory-enumeration.png
     └── 03-file-inspection-redacted.png
-Evidence Requirements
+## Evidence Requirements
 
 Screenshots should show:
 
@@ -188,7 +219,7 @@ File inspection with the credential itself redacted if visible.
 
 Do not upload screenshots containing reusable passwords or other authentication material.
 
-Credential Handling Note
+## Credential Handling
 
 The credential obtained during this exercise is intentionally excluded from the repository.
 
@@ -200,13 +231,34 @@ Why it was necessary.
 
 It should not publish the credential itself.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 All activities documented here were performed within the authorized OverTheWire Bandit cybersecurity training environment.
 
 The techniques should only be used against systems for which explicit authorization has been provided.
 
-Knowledge Notes
+## Knowledge Notes
 Related Topics
 SSH
 Linux filesystem navigation
@@ -218,7 +270,7 @@ See the consolidated notes:
 
 ../notes/linux.md
 ../notes/ssh.md
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 00 → 01 objective and established the basic workflow used for subsequent levels.
 

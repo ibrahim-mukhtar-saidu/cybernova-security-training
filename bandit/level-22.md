@@ -4,6 +4,20 @@
 
 Analyze a scheduled cron task and the script it executes to understand how a dynamically generated filename is derived and how the resulting file is used to obtain the Bandit Level 23 credential.
 
+## Environment
+
+| Item | Details |
+|---|---|
+| Platform | OverTheWire Bandit |
+| Source System | Parrot OS |
+| Shell | Bash |
+| Protocol | SSH |
+| SSH Port | 2220 |
+| Starting Account | bandit22 |
+| Target Account | bandit23 |
+| Authorization | Authorized cybersecurity training lab |
+| Investigation Type | Scheduled-task and script analysis |
+
 ## Investigation Approach
 
 The challenge focused on analyzing an automated Linux task and understanding the relationship between a cron configuration, the executed script, and a dynamically generated output filename.
@@ -127,6 +141,27 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of Linux cron, scheduled-task investigation, shell-script analysis, hashing operations, dynamic filenames, automated execution, and secure credential handling.
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical Use
 

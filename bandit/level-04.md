@@ -168,7 +168,7 @@ patterns and metadata to determine its likely type.
 
 This is particularly useful during Linux security investigations.
 
-Security Concept
+## Security Concept
 File-Type Identification
 
 Security analysts frequently need to determine what type of artifact they
@@ -194,7 +194,7 @@ file suspicious_file
 
 may reveal that an apparently harmless file is actually an executable.
 
-Security Investigation Perspective
+## Security Investigation Perspective
 
 During a host investigation, an analyst should avoid assuming that a file
 is safe or harmless based solely on its name.
@@ -215,7 +215,7 @@ may help identify readable strings within a binary artifact.
 Other tools may be appropriate for archives, executables, network captures,
 or compressed files.
 
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 This exercise has practical relevance to security operations.
 
@@ -258,7 +258,16 @@ Host-based investigation
 The important defensive lesson is that file names alone should not be
 treated as trustworthy evidence of file type.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+The file-type identification workflow is conceptually related to
+**T1083 — File and Directory Discovery**, while the inspection of filesystem
+artifacts supports broader host-based investigation.
+
+The ATT&CK reference is provided as defensive analytical context rather than
+as a claim that the challenge directly simulates an adversary procedure.
+
+## Skills Demonstrated
 
 This exercise demonstrated:
 
@@ -270,7 +279,7 @@ Selective file inspection
 Command-line investigation
 Evidence-oriented analysis
 Secure credential handling
-Evidence
+## Evidence
 
 Recommended evidence for this level:
 
@@ -304,7 +313,7 @@ credential.
 Suggested filename:
 
 evidence/screenshots/bandit-04-credential-redacted.png
-Evidence Handling
+## Evidence Handling
 
 Public screenshots must not expose reusable authentication material.
 
@@ -319,7 +328,7 @@ Keep original sensitive evidence locally if required.
 The purpose of the screenshot is to demonstrate methodology and successful
 execution.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential recovered during this exercise is intentionally excluded.
 
@@ -330,7 +339,7 @@ Public documentation uses:
 This repository demonstrates the investigation process rather than exposing
 authentication material.
 
-Ethical Scope
+## Ethical Scope
 
 All activity documented here was performed within the authorized
 OverTheWire Bandit training environment.
@@ -338,7 +347,7 @@ OverTheWire Bandit training environment.
 The techniques should only be used against systems for which explicit
 authorization has been provided.
 
-Lessons Learned
+## Lessons Learned
 1. File extensions are not trustworthy
 
 The actual contents of a file should be verified rather than inferred from
@@ -367,7 +376,7 @@ Linux administration
 Even credentials obtained from a training environment should be treated as
 sensitive information during documentation.
 
-Knowledge Notes
+## Knowledge Notes
 The file Command
 
 Basic usage:
@@ -393,7 +402,7 @@ but filenames alone do not establish what the files actually contain.
 
 File-type identification provides an additional layer of investigation.
 
-Investigation Workflow
+## Investigation Workflow
 
 The investigation followed this process:
 
@@ -419,7 +428,28 @@ Document evidence
 
 This represents a repeatable first-stage file investigation workflow.
 
-Training Outcome
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Training Outcome
 
 Successfully completed the Bandit Level 04 → 05 objective.
 

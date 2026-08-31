@@ -61,6 +61,25 @@ Validate Finding
      |
      v
 Protect Credential
+```
+
+## Investigation Approach
+
+The investigation used a frequency-analysis approach. Instead of manually reviewing every record, the dataset was normalized through sorting and then filtered to identify the record that occurred only once.
+
+The workflow was:
+
+1. Establish the current working directory.
+2. Identify and inspect the dataset.
+3. Determine the investigation condition: identify the unique record.
+4. Sort the dataset so identical records become adjacent.
+5. Use `uniq -u` to isolate records occurring once.
+6. Optionally use `uniq -c` to inspect frequency distribution.
+7. Validate the resulting record against the challenge requirement.
+8. Redact the recovered credential from public documentation.
+
+This approach demonstrates efficient data reduction, frequency analysis, and repeatable command-line investigation.
+
 Initial Reconnaissance
 
 After authenticating to the Bandit Level 08 environment, the current
@@ -139,7 +158,8 @@ Unique record
 
 The resulting line identifies the unique record required by the challenge.
 
-Command Explanation
+## Techniques and Commands
+
 sort
 sort data.txt
 
@@ -312,7 +332,7 @@ Unique Observation
 
 This pattern is broadly applicable to security data.
 
-Security Concept
+## Security Concept
 Duplicate and Unique Event Analysis
 
 Security analysts frequently investigate whether an event is:
@@ -334,7 +354,7 @@ The unusual event may deserve additional investigation.
 
 The Bandit exercise provides a simplified example of this analytical concept.
 
-SOC Relevance
+## Defensive / SOC Relevance
 
 SOC analysts routinely work with datasets containing repeated events.
 
@@ -478,7 +498,7 @@ Return unique records
 This is one of the most important concepts in practical Linux command-line
 work.
 
-Evidence Collection
+## Evidence Collection
 
 Recommended evidence for this level:
 
@@ -495,7 +515,7 @@ The resulting unique record.
 The credential should be obscured before any screenshot is published
 publicly.
 
-Evidence Reference
+## Evidence Reference
 Evidence	Purpose
 bandit-08-unique-record-analysis.png	Demonstrates duplicate/unique analysis
 wc -l output	Demonstrates dataset reconnaissance
@@ -505,7 +525,7 @@ Redacted output	Demonstrates credential protection
 
 Only evidence that actually exists should be referenced.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The unique record obtained from the challenge is authentication material
 for the training environment.
@@ -519,7 +539,28 @@ Public representation:
 This prevents accidental disclosure of credentials while preserving the
 technical explanation of the investigation.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 All activities documented in this report were performed against the
 authorized OverTheWire Bandit training environment.
@@ -534,7 +575,17 @@ Authorized CTF environments
 Defensive security training
 Security research in controlled environments
 Professional skills development
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+This exercise is a controlled text-analysis challenge rather than a direct reproduction of adversary behavior.
+
+The strongest MITRE ATT&CK reference is:
+
+- **T1083 — File and Directory Discovery** is conceptually relevant to the broader discovery workflow demonstrated across the Bandit exercises.
+
+For this specific level, the primary technical skill is frequency-based text analysis and data reduction. The ATT&CK reference is therefore presented as defensive analytical context rather than a claim that the challenge directly simulates an adversary procedure.
+
+## Skills Demonstrated
 Linux
 File inspection
 Text processing
@@ -553,7 +604,7 @@ Investigation methodology
 Anomaly identification
 Evidence handling
 Credential protection
-Professional Relevance
+## Professional Relevance
 
 This exercise contributes to skills relevant to SOC analyst and
 cybersecurity analyst roles.
@@ -571,7 +622,7 @@ Security-focused reasoning
 The exercise demonstrates that simple command-line utilities can be combined
 to answer practical investigation questions efficiently.
 
-Lessons Learned
+## Lessons Learned
 Large datasets should be analyzed systematically rather than manually.
 sort can organize records so duplicate values become adjacent.
 uniq operates on adjacent records.
@@ -586,7 +637,7 @@ evidence.
 Credentials discovered during security exercises should remain protected.
 Command-line data processing skills are directly transferable to log
 analysis and SOC workflows.
-Knowledge Notes
+## Knowledge Notes
 
 Related concepts are documented in:
 
@@ -601,7 +652,7 @@ Dataset filtering
 Frequency analysis
 Log analysis
 Security investigation methodology
-Investigation Methodology
+## Investigation Workflow
 
 The investigation followed a repeatable process:
 
@@ -627,7 +678,7 @@ Document evidence
 
 This methodology can be adapted to real-world security-log analysis.
 
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 08 → 09 objective.
 

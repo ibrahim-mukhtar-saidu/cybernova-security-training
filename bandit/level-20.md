@@ -4,6 +4,20 @@
 
 Use the provided setuid-based network utility to communicate with a local service and obtain the credential required for the Bandit Level 21 account.
 
+## Environment
+
+| Item | Details |
+|---|---|
+| Platform | OverTheWire Bandit |
+| Source System | Parrot OS |
+| Shell | Bash |
+| Protocol | SSH |
+| SSH Port | 2220 |
+| Starting Account | bandit20 |
+| Target Account | bandit21 |
+| Authorization | Authorized cybersecurity training lab |
+| Investigation Type | Setuid execution and privilege context |
+
 ## Investigation Approach
 
 The challenge focused on understanding how a privileged executable can interact with a local TCP service and how data exchanged over that connection can be used within an authorized security-training environment.
@@ -124,6 +138,27 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of TCP networking, local service communication, network listeners, setuid execution, privileged processes, and secure credential handling.
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical Use
 

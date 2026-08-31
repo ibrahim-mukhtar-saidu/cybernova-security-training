@@ -4,6 +4,20 @@
 
 Authenticate to the Bandit Level 17 account using the private SSH key obtained during the Level 16 challenge.
 
+## Environment
+
+| Item | Details |
+|---|---|
+| Platform | OverTheWire Bandit |
+| Source System | Parrot OS |
+| Shell | Bash |
+| Protocol | SSH |
+| SSH Port | 2220 |
+| Starting Account | bandit16 |
+| Target Account | bandit17 |
+| Authorization | Authorized cybersecurity training lab |
+| Investigation Type | Network service enumeration and TLS service interaction |
+
 ## Investigation Approach
 
 The challenge involved identifying the appropriate network service, interacting with the service securely, retrieving the SSH private key, protecting it with restrictive permissions, validating the key, and using it for SSH authentication.
@@ -89,6 +103,27 @@ Private keys should remain outside the public repository.
 ## Learning Outcome
 
 This level strengthened practical understanding of service enumeration, TLS interaction, SSH key authentication, file permissions, and secure credential handling.
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical Use
 

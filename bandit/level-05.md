@@ -54,12 +54,27 @@ The investigation therefore involves:
 
 ---
 
+## Investigation Approach
+
+The investigation used a systematic filesystem-discovery approach. The target was identified by its known file characteristics rather than by filename alone.
+
+The workflow was:
+
+1. Inspect the `inhere` directory.
+2. Enumerate regular files recursively.
+3. Filter candidates by the known file size.
+4. Exclude executable files.
+5. Validate the remaining candidate with `file`.
+6. Inspect the validated artifact.
+7. Redact the recovered credential from public documentation.
+
 ## Initial Access
 
 The environment is accessed through SSH:
 
 ```bash
 ssh -p 2220 bandit5@bandit.labs.overthewire.org
+```
 
 Authentication uses the credential obtained from Bandit Level 04.
 
@@ -185,7 +200,8 @@ The command returns the credential required for Bandit Level 06.
 The credential is intentionally not reproduced in this public repository.
 
 [REDACTED]
-Command-by-Command Analysis
+## Techniques and Commands
+
 ls -la
 ls -la
 
@@ -260,7 +276,7 @@ find /var/log -type f -size +1M
 
 to identify files larger than one megabyte.
 
-Security Concept
+## Security Concept
 Systematic Artifact Discovery
 
 Security investigations often involve locating an unknown file among a large
@@ -311,7 +327,7 @@ inhere/
 A recursive search allows the investigator to inspect the entire relevant
 directory tree.
 
-Security Investigation Perspective
+## Security Investigation Perspective
 
 Suppose an analyst is investigating a compromised Linux server and has been
 given the following information:
@@ -334,7 +350,7 @@ The results can then be examined individually.
 This demonstrates the same investigation principle practiced in the Bandit
 challenge.
 
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 This level has strong relevance to defensive security operations.
 
@@ -356,12 +372,12 @@ Linux Security Monitoring
 Unexpected files with unusual permissions or locations may warrant further
 investigation.
 
-Evidence Collection
+## Evidence Collection
 
 Search conditions can make artifact collection more systematic and
 repeatable.
 
-MITRE ATT&CK Relevance
+## MITRE ATT&CK Relevance
 
 This exercise is primarily a controlled filesystem investigation challenge.
 
@@ -376,7 +392,7 @@ The challenge should not be represented as a direct reproduction of an
 adversary technique. Instead, it demonstrates analyst skills useful for
 investigating those behaviors.
 
-Skills Demonstrated
+## Skills Demonstrated
 
 This exercise demonstrated:
 
@@ -391,7 +407,7 @@ File inspection
 Command-line investigation
 Evidence-oriented analysis
 Secure credential handling
-Evidence
+## Evidence
 
 Recommended evidence for this level includes:
 
@@ -444,7 +460,7 @@ However, the credential must be redacted before public publication.
 Suggested filename:
 
 evidence/screenshots/bandit-05-credential-redacted.png
-Evidence Handling
+## Evidence Handling
 
 Evidence should demonstrate the investigation process without exposing
 authentication material.
@@ -459,7 +475,7 @@ Preserve original evidence locally if necessary.
 
 The objective is to prove technical competency rather than publish secrets.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential obtained from this level is intentionally excluded from the
 repository.
@@ -470,7 +486,7 @@ Public documentation uses:
 
 No valid Bandit credentials should be committed to GitHub.
 
-Ethical Scope
+## Ethical Scope
 
 All activity documented in this report was performed within the authorized
 OverTheWire Bandit training environment.
@@ -478,7 +494,7 @@ OverTheWire Bandit training environment.
 The techniques should only be applied to systems for which explicit
 authorization has been provided.
 
-Lessons Learned
+## Lessons Learned
 1. Search by characteristics, not only names
 
 An unknown artifact can often be identified using properties such as size,
@@ -502,7 +518,7 @@ expected artifact.
 
 The same approach can be used during real Linux host investigations.
 
-Knowledge Notes
+## Knowledge Notes
 Common find Conditions
 
 Regular files:
@@ -528,7 +544,7 @@ find . -type f -size -1M
 Files not executable:
 
 find . -type f ! -executable
-Investigation Workflow
+## Investigation Workflow
 
 The investigation followed this process:
 
@@ -556,7 +572,28 @@ Document evidence
 
 This demonstrates a repeatable approach to filesystem artifact discovery.
 
-Training Outcome
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Training Outcome
 
 Successfully completed the Bandit Level 05 → 06 objective.
 

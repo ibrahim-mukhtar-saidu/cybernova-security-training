@@ -202,7 +202,7 @@ spaces in this filename
 
 This distinction is fundamental to reliable shell usage.
 
-Security Concept
+## Security Concept
 Shell Argument Parsing
 
 Command-line argument parsing is important in cybersecurity because many
@@ -212,7 +212,7 @@ network addresses, or other external data.
 If input is not handled correctly, whitespace and other special characters
 can change how a command is interpreted.
 
-Security Relevance
+## Security Relevance
 
 Improper shell argument handling can contribute to:
 
@@ -226,7 +226,7 @@ Unsafe administrative scripts
 For example, a script that constructs shell commands from untrusted filenames
 without proper quoting may behave unexpectedly.
 
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 Security analysts frequently process attacker-controlled or externally
 generated data.
@@ -252,7 +252,7 @@ Avoiding unnecessary shell interpretation
 Using APIs that accept argument arrays
 Validating untrusted input
 Avoiding unsafe string concatenation
-Investigation Methodology
+## Investigation Methodology
 
 The investigation followed this process:
 
@@ -276,7 +276,16 @@ Document the security implication
 
 This demonstrates a repeatable host-investigation workflow.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+The exercise involves identifying and handling files within an authenticated
+filesystem. This is conceptually related to **T1083 — File and Directory
+Discovery**.
+
+The technique is referenced to connect the laboratory activity with a
+defensive understanding of filesystem discovery.
+
+## Skills Demonstrated
 Bash shell usage
 Linux filesystem navigation
 File enumeration
@@ -286,7 +295,7 @@ Quoting and escaping
 Safe command-line handling
 Security automation awareness
 Technical documentation
-Evidence / Screenshot Reference
+## Evidence / Screenshot Reference
 
 Recommended public evidence:
 
@@ -302,7 +311,7 @@ evidence/screenshots/bandit-02-file-access.png
 If the command output contains authentication material, redact the
 credential before publishing the screenshot.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential obtained during the challenge is not included in the public
 repository.
@@ -314,7 +323,28 @@ Instead, documentation uses:
 Private authentication material should never be committed to a public
 repository.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 This exercise was performed exclusively against the authorized OverTheWire
 Bandit training environment.
@@ -322,7 +352,7 @@ Bandit training environment.
 The techniques documented here should only be applied to systems for which
 explicit authorization has been provided.
 
-Lessons Learned
+## Lessons Learned
 Bash normally uses whitespace to separate command-line arguments.
 Filenames containing spaces must be quoted or escaped.
 Quoting preserves a filename as a single command argument.
@@ -332,7 +362,7 @@ Untrusted filenames should never be blindly inserted into shell commands.
 Security analysts must understand shell parsing when investigating Linux
 systems.
 Training credentials should not be published in public repositories.
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 02 → 03 objective.
 

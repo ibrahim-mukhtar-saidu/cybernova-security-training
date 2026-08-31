@@ -110,7 +110,27 @@ supported by observable evidence rather than assumptions.
 
 ---
 
-## Security Concepts Consolidated
+## Investigation Approach
+
+The final Bandit exercise was approached as a verification and consolidation
+exercise rather than as an isolated command challenge.
+
+The workflow was:
+
+1. Confirm completion of the preceding Bandit progression.
+2. Review the available shell environment.
+3. Verify the expected final challenge behavior.
+4. Identify the security concepts demonstrated across the training series.
+5. Validate that the repository documentation accurately represents the
+   completed training activities.
+6. Confirm that credentials and other authentication material are not exposed.
+7. Record the final learning outcome and limitations.
+
+The emphasis is on verification, documentation quality, credential protection,
+and consolidation of Linux security-analysis skills developed throughout the
+Bandit series.
+
+## Security Concepts
 
 The complete Bandit progression provided practical exposure to a broad range of
 Linux and security concepts.

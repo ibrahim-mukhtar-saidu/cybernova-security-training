@@ -433,6 +433,28 @@ unnecessary disclosure of authentication information.
 
 ---
 
+## Investigation Approach
+
+The investigation treated the supplied artifact as a potentially transformed
+data object rather than assuming that its current representation was the
+original file format.
+
+The workflow was:
+
+1. Preserve the original artifact.
+2. Inspect its representation.
+3. Reverse the hexadecimal representation.
+4. Identify the resulting file type.
+5. Select the appropriate extraction utility.
+6. Extract one compression or archive layer.
+7. Re-identify the resulting artifact.
+8. Repeat the process until plaintext was recovered.
+9. Validate the final result.
+10. Protect the recovered credential from public disclosure.
+
+This approach demonstrates iterative artifact analysis and emphasizes
+validation after every transformation.
+
 ## Security Concepts
 
 ### Hexadecimal Representation
@@ -470,6 +492,16 @@ Recovered credentials should be treated as sensitive information even when
 they originate from a training environment.
 
 ---
+
+## MITRE ATT&CK Relevance
+
+The exercise demonstrates iterative identification and extraction of layered
+file representations.
+
+The activity is conceptually relevant to host-based artifact analysis and
+discovery, but it should not be interpreted as a direct reproduction of an
+adversary procedure. The ATT&CK relationship is therefore presented as
+defensive analytical context.
 
 ## Skills Demonstrated
 
@@ -672,6 +704,27 @@ This documentation demonstrates the process used to obtain and validate the
 credential without exposing the secret itself.
 
 ---
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical / Lab Scope
 

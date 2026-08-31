@@ -8,103 +8,181 @@
 ## Overview
 
 This repository documents my hands-on cybersecurity training through the
-OverTheWire Bandit wargame.
+OverTheWire Bandit wargame, completed from Bandit 00 → 33.
 
-The purpose of this project is not simply to complete CTF levels. It is to
-develop practical skills in Linux administration, command-line investigation,
-file permissions, encoding, compression, networking, authentication, SSH,
-TLS/SSL, service enumeration, restricted environments, and privilege
-escalation.
+The purpose of this project is not simply to complete CTF challenges, but to
+develop practical and transferable skills in Linux administration,
+command-line investigation, filesystem analysis, file permissions, encoding,
+compression, networking, authentication, SSH, TLS/SSL, service enumeration,
+restricted environments, and privilege-boundary analysis.
 
-The exercises are documented as a structured cybersecurity learning record
-with technical explanations, observed results, lessons learned, security
-implications, and selected evidence.
+Each challenge is approached as a technical investigation: observing system
+behavior, enumerating relevant information, forming and testing hypotheses,
+analyzing evidence, identifying the underlying security concept, and
+documenting the findings.
+
+The exercises are maintained as a structured cybersecurity learning record
+with technical explanations, observed results, security implications,
+defensive/SOC relevance, lessons learned, and selected supporting evidence.
 
 ---
+
 
 ## Objectives
 
-The primary objectives of this training are to:
+The primary objectives of this training are to develop practical, transferable
+cybersecurity skills through hands-on Linux and security challenges.
 
-- Develop strong Linux command-line skills.
-- Understand Linux filesystem permissions and ownership.
-- Investigate files and directories using native Linux tools.
-- Work with hidden files and unusual filenames.
-- Identify and process encoded data.
-- Analyze compressed and archived files.
-- Use pattern matching and text-processing utilities.
-- Develop basic network enumeration skills.
-- Understand TCP-based services.
-- Work with SSH authentication.
-- Understand TLS/SSL connections.
-- Analyze service behavior.
-- Understand restricted shell environments.
-- Identify and understand SUID executables.
+### Technical Objectives
+
+- Develop strong Linux command-line proficiency.
+- Investigate files, directories, permissions, ownership, and filesystem
+  structures.
+- Identify hidden, unusual, encoded, compressed, and archived data.
+- Apply text-processing, filtering, and pattern-matching techniques.
+- Develop foundational network enumeration and service-analysis skills.
+- Understand TCP-based services and client/server communication.
+- Practice SSH authentication and secure remote-access concepts.
+- Inspect TLS/SSL connections and certificate information.
+- Analyze restricted shell environments and command-execution behavior.
+- Identify SUID executables and understand privilege boundaries.
 - Understand real UID versus effective UID.
-- Practice basic privilege-escalation concepts.
-- Develop structured cybersecurity investigation habits.
-- Connect technical findings to defensive and SOC use cases.
+- Analyze basic privilege-escalation scenarios within authorized laboratories.
+- Investigate Git repositories, history, branches, tags, and historical data.
+
+### Investigation Objectives
+
+- Follow a structured security-investigation methodology.
+- Observe system behavior before forming conclusions.
+- Enumerate relevant technical information using appropriate tools.
+- Form and test technical hypotheses.
+- Analyze evidence and distinguish observations from conclusions.
+- Document findings clearly and reproducibly.
+- Identify the security significance of technical findings.
+- Connect laboratory techniques to defensive security and SOC workflows.
+
+### Professional Objectives
+
+- Strengthen practical Linux and networking foundations.
+- Develop evidence-based technical documentation habits.
+- Improve command-line troubleshooting and analytical reasoning.
+- Practice explaining technical findings in a clear, professional manner.
+- Translate hands-on CTF experience into transferable cybersecurity knowledge.
 
 ---
 
+
 ## Training Environment
+
+The training was conducted from a Linux workstation against the authorized
+OverTheWire Bandit training environment.
 
 | Component | Details |
 |---|---|
 | Training Platform | OverTheWire Bandit |
 | Operating System | Parrot OS |
 | Shell | Bash |
+| Primary Interface | SSH |
 | Primary Language | Linux shell commands |
 | Networking Tools | Nmap, OpenSSL, SSH |
-| Target Environment | OverTheWire Bandit Linux server |
-| Training Type | Authorized cybersecurity lab |
+| Target Environment | Authorized OverTheWire Bandit Linux servers |
+| Training Type | Authorized cybersecurity laboratory |
 | Documented Range | Bandit 00 → 33 |
 
+### Working Method
+
+The exercises were performed interactively through the Linux command line.
+Tools and commands were selected according to the requirements of each
+challenge and the behavior observed during investigation.
+
+The general workflow was:
+
+1. Establish access to the authorized training environment.
+2. Inspect the available files, services, permissions, or shell behavior.
+3. Identify relevant technical clues.
+4. Select an appropriate command or security tool.
+5. Form and test a technical hypothesis.
+6. Analyze the resulting evidence.
+7. Document the finding and underlying security concept.
+8. Consider the defensive-security relevance.
+
+No third-party systems were intentionally targeted as part of this training.
+
 ---
+
 
 ## Skills Demonstrated
 
-### Linux
+The completed Bandit training demonstrates foundational practical skills in
+Linux administration, command-line investigation, networking, authentication,
+and security analysis.
 
-- Filesystem navigation
-- File discovery
+### Linux & Host Investigation
+
+- Linux filesystem navigation and directory inspection
+- File discovery and metadata analysis
 - Hidden-file identification
-- File permissions
-- File ownership
-- Symbolic links
-- Special filenames
-- Text processing
+- File permissions and ownership analysis
+- Symbolic-link handling
+- Special and unusual filename handling
 - File type identification
-- Compression and archive handling
+- Command-line text processing
+- Pattern matching and targeted searches
+- Compression and archive analysis
 
-### Networking
+### Networking & Services
 
-- Local TCP communication
+- TCP service interaction
 - Port enumeration
 - Service discovery
-- Service/version detection
+- Basic service and version identification
 - Client/server communication
+- Network-oriented troubleshooting
+- Analysis of exposed services within an authorized laboratory
 
-### Authentication & Cryptography
+### Authentication & Secure Communications
 
 - SSH authentication
-- SSH private keys
-- TLS/SSL connections
+- SSH private-key authentication
+- Secure remote-access concepts
+- TLS/SSL service interaction
 - Certificate inspection
-- Secure credential transmission
+- Authentication-service analysis
+- Credential-handling awareness
 
-### Security
+### Security Analysis
 
-- SUID analysis
-- Effective UID identification
-- Privilege escalation concepts
-- Restricted shell analysis
-- Authentication service analysis
+- SUID executable identification
+- Real UID and effective UID concepts
+- Privilege-boundary analysis
+- Basic privilege-escalation concepts
+- Restricted-shell analysis
+- Command-execution behavior analysis
+- Scheduled-execution analysis
 - Attack-surface enumeration
+- Git repository and historical-data investigation
+- Sensitive-data exposure awareness
+
+### Investigation & Documentation
+
+- Structured command-line investigation
+- Evidence-oriented analysis
+- Hypothesis-driven troubleshooting
+- Reproducible technical documentation
+- Security-impact analysis
+- Defensive-security interpretation
+- Connecting technical observations to SOC and Blue Team concepts
 
 ---
 
+
+
 ## Bandit Progress
+
+The Bandit training has been completed from **Bandit 00 → 33**.
+
+The repository contains one technical report for each level, covering 34
+documented levels in total.
 
 | Level | Primary Security / Technical Focus | Status |
 |---|---|---|
@@ -118,207 +196,173 @@ The primary objectives of this training are to:
 | 07 → 08 | Searching structured text | Completed |
 | 08 → 09 | Duplicate/unique data analysis | Completed |
 | 09 → 10 | Human-readable strings | Completed |
-| 10 → 11 | Base64 encoding | Completed |
+| 10 → 11 | Base64 decoding | Completed |
 | 11 → 12 | Character transformation | Completed |
 | 12 → 13 | Multi-layer compression | Completed |
 | 13 → 14 | SSH private-key authentication | Completed |
-| 14 → 15 | TCP/TLS authentication | Completed |
+| 14 → 15 | TCP service authentication | Completed |
 | 15 → 16 | TLS service interaction | Completed |
 | 16 → 17 | Network enumeration and SSH key extraction | Completed |
 | 17 → 18 | File comparison | Completed |
 | 18 → 19 | Restricted shell / non-interactive SSH | Completed |
-| 19 → 20 | SUID privilege escalation | Completed |
+| 19 → 20 | SUID privilege-boundary analysis | Completed |
 | 20 → 21 | TCP client/server authentication | Completed |
+| 21 → 22 | Cron and scheduled execution | Completed |
+| 22 → 23 | Automated file processing | Completed |
+| 23 → 24 | Cron-executed script analysis | Completed |
+| 24 → 25 | Network authentication and input automation | Completed |
+| 25 → 26 | Restricted shell and terminal behavior | Completed |
+| 26 → 27 | Restricted shell and executable behavior | Completed |
+| 27 → 28 | Git repository history | Completed |
+| 28 → 29 | Historical Git content | Completed |
+| 29 → 30 | Git branches and development data | Completed |
+| 30 → 31 | Git tags and repository metadata | Completed |
+| 31 → 32 | Git commit and remote interaction | Completed |
+| 32 → 33 | Restricted shell and command parsing | Completed |
+| 33 | Final completion verification | Completed |
+
+### Completion Summary
+
+- **Levels completed:** Bandit 00 → 33
+- **Level reports:** 34
+- **Training status:** Completed
+- **Documentation status:** All levels documented
+- **Sensitive challenge credentials:** Not published
+
+The progress table focuses on the technical and security concepts demonstrated
+by each level rather than publishing challenge passwords or authentication
+material.
 
 ---
 
+
 ## Documentation Structure
 
-Each level has a dedicated technical report:
+The repository uses a structured documentation model designed to make the
+training auditable, reproducible, and easy for a technical reviewer or
+recruiter to understand.
 
-```text
-bandit/
-├── README.md
-├── level-00.md
-├── level-01.md
-├── level-02.md
-├── ...
-├── level-32.md
-└── level-33.md
+### Level Reports
 
-Each report documents:
+Each Bandit level has a dedicated technical report under `bandit/`.
 
-Objective
-Environment
-Scenario / challenge
-Initial reconnaissance
-Commands used
-Command-by-command explanation
-Observed result
-Technical analysis
-Security concept
-Skills demonstrated
-Defensive / SOC relevance
-Lessons learned
-Evidence / screenshot reference
-Credential-handling note
-Ethical / lab scope note
-Knowledge Notes
+The repository contains 34 level reports covering Bandit 00 → 33.
 
-Cross-level security concepts are consolidated in:
+Each report is intended to document:
 
-notes/
-├── linux.md
-├── networking.md
-├── ssh.md
-├── tls.md
-└── privilege-escalation.md
+1. Objective
+2. Environment
+3. Challenge scenario
+4. Initial observations
+5. Investigation approach
+6. Commands used
+7. Command explanations
+8. Observed results
+9. Technical analysis
+10. Security concept
+11. Skills demonstrated
+12. Defensive / SOC relevance
+13. Evidence references
+14. Credential-handling considerations
+15. Lessons learned
+16. Ethical-use scope
 
-These notes summarize the broader concepts learned during the practical
-exercises.
+The goal is to document not only how a challenge was completed, but also why
+a particular investigation method was selected and what broader cybersecurity
+concept the exercise demonstrates.
 
-Evidence
+### Cross-Level Knowledge Notes
 
-Selected screenshots and supporting evidence are stored under:
+Broader concepts encountered across multiple challenges are consolidated
+under `notes/`.
 
-evidence/screenshots/
+The knowledge-note collection covers:
 
-Evidence is intended to demonstrate important technical activities such as:
+- Linux fundamentals
+- Networking
+- SSH
+- TLS
+- Privilege escalation
 
-Linux investigation
-File and permission analysis
-Network enumeration
-TLS connections
-SSH authentication
-Service identification
-Restricted shell behavior
-SUID analysis
+These notes provide cross-level explanations without unnecessarily duplicating
+the individual challenge reports.
 
-The repository intentionally avoids storing sensitive authentication material.
+### Evidence
 
-Credential Handling
+Evidence references are documented in the individual level reports.
+Screenshots may be added selectively to demonstrate important technical
+activities without exposing sensitive authentication material.
 
-Credentials obtained during the training exercises are not published in
-this repository.
+Evidence is intended to support important technical activities such as:
 
-Passwords are represented as:
+- Linux filesystem investigation
+- File and permission analysis
+- Network enumeration
+- Service identification
+- SSH authentication
+- TLS connections
+- Restricted-shell behavior
+- SUID analysis
+- Git investigation
 
-[REDACTED]
+Screenshots are supporting evidence and do not replace the technical
+explanation contained in each level report.
 
-Private SSH keys and other authentication material are intentionally excluded
-from public documentation.
+### Credential Handling
 
-The purpose of the repository is to demonstrate technical methodology,
-security reasoning, and practical skills rather than expose credentials.
+Challenge passwords, private SSH keys, and other authentication material are
+intentionally excluded from the public repository.
 
-Defensive / SOC Relevance
+Sensitive values are represented as `[REDACTED]` where necessary.
 
-Although Bandit is a Linux-based CTF environment, many of the skills practiced
-here have direct relevance to security operations.
+The purpose of this repository is to demonstrate methodology, investigation,
+technical reasoning, and security knowledge without exposing authentication
+material.
 
-Examples include:
+### Documentation Quality Standard
 
-Enumeration
+Each level report should clearly distinguish between:
 
-Understanding how services and files can be discovered helps security analysts
-recognize attack-surface enumeration and investigate suspicious activity.
+- Observation — what was directly observed.
+- Analysis — what the observation means technically.
+- Security significance — why the finding matters.
+- Evidence — how the result can be verified.
+- Defensive relevance — how the concept relates to security operations,
+  investigation, or Blue Team work.
 
-Authentication
+This structure makes the documentation easier to audit and evaluate.
 
-Working with SSH, TLS, and credentials provides practical exposure to
-authentication mechanisms that frequently appear in security monitoring.
+### Defensive / SOC Relevance
 
-Privilege Escalation
+The Bandit exercises provide foundational experience relevant to security
+operations, including:
 
-Analyzing SUID binaries demonstrates how excessive or unsafe privileges can
-be abused to execute actions with elevated permissions.
+- Host and filesystem investigation
+- Authentication analysis
+- Network and service enumeration
+- Restricted command execution analysis
+- Privilege-boundary analysis
+- Sensitive-data exposure awareness
+- Evidence-driven investigation
+- Linux command-line investigation
 
-File Investigation
+These exercises represent foundational laboratory training and are not
+presented as equivalent to production SOC experience.
 
-Searching, identifying, comparing, and processing files develops foundational
-skills useful during host-based investigations.
+### Ethical Use
 
-Command-Line Analysis
+All activities documented in this repository were performed within authorized
+cybersecurity training environments.
 
-Linux command-line proficiency is valuable when investigating servers,
-security appliances, cloud workloads, and incident-response environments.
+The techniques documented here should only be used against systems for which
+explicit authorization has been provided.
 
-Ethical Use
+### Learning Approach
 
-All activities documented in this repository were performed in an authorized
-training environment provided for cybersecurity education.
+The training follows a repeatable investigation workflow:
 
-The techniques should only be used against systems for which explicit
-authorization has been provided.
+Observe → Enumerate → Form a hypothesis → Test → Analyze → Document evidence
+→ Identify the security concept → Connect the finding to defensive security
 
-Disclaimer
-
-This repository is a cybersecurity education and portfolio project.
-
-The documented techniques are intended for:
-
-Authorized laboratories
-CTF competitions
-Cybersecurity education
-Defensive security research
-Systems owned or explicitly authorized by the tester
-
-Unauthorized use of security techniques against third-party systems may be
-illegal or harmful.
-
-Learning Approach
-
-For each challenge, I aim to follow a repeatable investigation process:
-
-Observe
-   ↓
-Enumerate
-   ↓
-Form a hypothesis
-   ↓
-Test with appropriate tools
-   ↓
-Analyze the result
-   ↓
-Identify the security concept
-   ↓
-Document evidence
-   ↓
-Connect the technique to defensive security
-
-This approach is intended to develop transferable cybersecurity investigation
-skills rather than memorization of individual commands.
-
-Project Status
-
-Training status: Bandit 00 → 33 completed
-
-Documented range: Bandit 00 → 33
-
-Current objective: Consolidate the completed training into a consistent,
-professional cybersecurity learning record and continue expanding the
-technical notes and defensive security analysis.
-
-Author
-
-Ibrahim Mukhtar Saidu
-
-Aspiring Cybersecurity Analyst | SOC & Blue Team
-
-CYBERNOVA AI
-
-Related Portfolio
-
-This CTF training is part of the broader CYBERNOVA AI cybersecurity portfolio,
-which includes practical projects involving:
-
-Security monitoring
-Threat detection
-Incident response
-Threat intelligence
-Linux security
-Windows security monitoring
-Cloud security monitoring
-Identity and access security
-SIEM concepts
-Python security automation
+This approach emphasizes transferable investigation skills rather than
+memorization of individual challenge solutions.

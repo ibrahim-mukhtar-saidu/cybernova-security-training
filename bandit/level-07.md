@@ -59,6 +59,24 @@ Validate Result
       |
       v
 Protect Credential
+```
+
+## Investigation Approach
+
+The investigation used a targeted text-search approach. Instead of manually reviewing the entire dataset, the known search condition was translated into a command-line filtering operation.
+
+The workflow was:
+
+1. Establish the current working directory.
+2. Identify the relevant text file.
+3. Determine the known search condition.
+4. Search the dataset with `grep`.
+5. Inspect the matching record.
+6. Validate that the result corresponds to the challenge requirement.
+7. Redact the recovered credential from public documentation.
+
+This approach demonstrates efficient data reduction and targeted evidence discovery.
+
 Initial Reconnaissance
 
 The first step is to inspect the current working directory.
@@ -91,7 +109,7 @@ Permissions
 The file should be treated as an investigation dataset rather than manually
 opened and read from beginning to end.
 
-Investigation Methodology
+## Investigation Methodology
 
 When investigating a large text file, manually reviewing every line is
 inefficient.
@@ -239,7 +257,7 @@ Large amounts of security telemetry cannot normally be reviewed manually.
 Analysts use filtering, searching, and correlation techniques to identify
 events requiring further investigation.
 
-Security Concept
+## Security Concept
 Pattern Matching
 
 Pattern matching allows an analyst to identify records containing a known
@@ -277,7 +295,7 @@ Investigators need methods for reducing these datasets to relevant events.
 
 The Bandit exercise provides a simple example of this principle.
 
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 The same concept applies directly to SOC workflows.
 
@@ -352,7 +370,7 @@ Treating the resulting credential as sensitive information.
 
 This prevents accidental extraction of unrelated data.
 
-Evidence Collection
+## Evidence Collection
 
 Recommended evidence for this level:
 
@@ -369,7 +387,7 @@ The matching record.
 The actual credential should be obscured or otherwise excluded from any
 public screenshot.
 
-Evidence Reference
+## Evidence Reference
 Evidence	Purpose
 bandit-07-targeted-text-search.png	Demonstrates targeted text searching
 ls -l output	Demonstrates file reconnaissance
@@ -378,7 +396,7 @@ Redacted result	Demonstrates secure documentation
 
 Only evidence that actually exists should be referenced in the repository.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential discovered during this exercise is authentication material for
 the authorized training environment.
@@ -394,7 +412,28 @@ This demonstrates responsible handling of authentication information.
 Even in a training environment, credentials should not be unnecessarily
 published.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 All activities documented in this report were performed against the
 authorized OverTheWire Bandit training environment.
@@ -409,7 +448,17 @@ Authorized CTF training
 Defensive security learning
 Security research in controlled environments
 Professional skills development
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+This exercise is a controlled text-analysis challenge rather than a direct reproduction of adversary behavior.
+
+The strongest MITRE ATT&CK reference is:
+
+- **T1083 — File and Directory Discovery** is conceptually relevant to the broader discovery and identification workflow demonstrated across the Bandit filesystem exercises.
+
+For this specific level, the primary technical skill is targeted text searching and data reduction. The ATT&CK reference is therefore presented as defensive analytical context rather than a claim that the challenge directly simulates an adversary procedure.
+
+## Skills Demonstrated
 Linux
 File inspection
 Directory enumeration
@@ -428,7 +477,7 @@ Reducing a dataset
 Identifying relevant records
 Validating findings
 Documenting technical evidence
-Professional Relevance
+## Professional Relevance
 
 This exercise contributes to skills relevant to entry-level SOC and
 cybersecurity analyst roles.
@@ -458,7 +507,7 @@ Which tool can efficiently identify it?
 How do I validate the result?
         ↓
 How should I document it?
-Lessons Learned
+## Lessons Learned
 Large text files should not always be reviewed manually.
 grep provides efficient pattern-based searching.
 Investigation questions can be translated into search conditions.
@@ -469,7 +518,7 @@ Security analysts frequently work with large datasets.
 Pattern matching is a foundational security-analysis technique.
 Credentials discovered during investigations should be protected.
 Simple Linux utilities can provide powerful investigation capabilities.
-Knowledge Notes
+## Knowledge Notes
 
 Related concepts are documented in:
 
@@ -484,7 +533,7 @@ Pattern matching
 Log analysis
 Dataset filtering
 Investigation methodology
-Investigation Methodology
+## Investigation Workflow
 
 The investigation followed a repeatable process:
 
@@ -509,7 +558,7 @@ Document evidence
 This methodology can be transferred to real-world log and security-event
 investigations.
 
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 07 → 08 objective.
 

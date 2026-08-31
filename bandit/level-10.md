@@ -319,6 +319,16 @@ malicious activity.
 
 ---
 
+## MITRE ATT&CK Relevance
+
+The exercise focuses on recognizing Base64 encoding and decoding an encoded
+artifact.
+
+It does not directly reproduce an adversary technique. Encoded or transformed
+data can occur during attacker activity, but the Bandit challenge itself is
+best treated as an analytical training exercise rather than a direct ATT&CK
+procedure simulation.
+
 ## Skills Demonstrated
 
 ### Linux
@@ -433,6 +443,27 @@ The credential was used only for progression within the authorized
 OverTheWire Bandit environment.
 
 ---
+
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
 
 ## Ethical / Lab Scope
 

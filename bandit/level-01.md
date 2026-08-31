@@ -180,7 +180,7 @@ cat ./-
 For this challenge, the explicit relative-path method is particularly easy
 to understand and demonstrates clear filesystem reasoning.
 
-Security Concept
+## Security Concept
 Special Filename Handling
 
 Attackers and administrators may encounter unusual filenames during:
@@ -199,7 +199,7 @@ naming patterns.
 Unexpected filenames can also be deliberately created to confuse automated
 scripts or administrators.
 
-Security Relevance
+## Security Relevance
 
 Improper handling of filenames can cause security tools and scripts to
 interpret attacker-controlled filenames as command-line options.
@@ -216,7 +216,7 @@ File-processing pipelines
 Backup scripts
 Malware collection tools
 SOC investigation utilities
-Defensive / SOC Relevance
+## Defensive / SOC Relevance
 
 During a host investigation, an analyst may encounter files with unusual
 names.
@@ -234,7 +234,16 @@ Using APIs that separate arguments from shell commands
 
 These practices help reduce command-injection and argument-injection risks.
 
-Skills Demonstrated
+## MITRE ATT&CK Relevance
+
+The exercise involves locating and inspecting a file within the authenticated
+environment. This is conceptually related to **T1083 — File and Directory
+Discovery**.
+
+The mapping is provided as defensive analytical context and does not imply
+that the CTF exercise directly reproduces adversary behavior.
+
+## Skills Demonstrated
 Linux filesystem navigation
 Bash command-line usage
 File enumeration
@@ -243,7 +252,7 @@ Unix command argument interpretation
 Safe file access
 Basic security automation awareness
 Technical documentation
-Investigation Methodology
+## Investigation Methodology
 
 The investigation followed this sequence:
 
@@ -266,7 +275,7 @@ Document security implications
 This workflow demonstrates a repeatable approach that can be applied beyond
 CTF environments.
 
-Evidence / Screenshot Reference
+## Evidence / Screenshot Reference
 
 Recommended evidence for this level:
 
@@ -282,7 +291,7 @@ evidence/screenshots/bandit-01-command-result.png
 If the command output contains authentication material, redact the sensitive
 value before adding the screenshot to the public repository.
 
-Credential-Handling Note
+## Credential-Handling Note
 
 The credential obtained from the challenge is intentionally excluded from
 this public repository.
@@ -294,7 +303,28 @@ Public documentation uses:
 Private credentials, authentication tokens, SSH keys, and other sensitive
 authentication material should never be committed to a public Git repository.
 
-Ethical / Lab Scope
+## Limitations
+
+This exercise was performed in the controlled OverTheWire Bandit training
+environment and therefore does not reproduce the complexity of a production
+enterprise environment.
+
+Limitations include:
+
+- Synthetic or intentionally constructed challenge conditions.
+- Limited system and network scope.
+- No production authentication infrastructure.
+- No enterprise SIEM, EDR, identity platform, or centralized logging.
+- No real organizational incident-response process.
+- Challenge objectives may simplify real-world investigative scenarios.
+- Results should not be interpreted as evidence of production security
+  capability by themselves.
+
+The primary value of the exercise is the development of transferable Linux,
+command-line investigation, analytical reasoning, evidence-handling, and
+security-documentation skills.
+
+## Ethical / Lab Scope
 
 This activity was performed exclusively within the authorized OverTheWire
 Bandit cybersecurity training environment.
@@ -302,7 +332,7 @@ Bandit cybersecurity training environment.
 The techniques documented here should only be applied to systems for which
 explicit authorization has been provided.
 
-Lessons Learned
+## Lessons Learned
 Linux commands may interpret arguments beginning with - as options.
 A filename can have a meaning that conflicts with command-line syntax.
 Explicit filesystem paths can remove command-line ambiguity.
@@ -311,7 +341,7 @@ Security analysts must be comfortable handling unusual filesystem objects.
 Investigation tools and automation should safely process attacker-
 controlled filenames.
 Credentials obtained during training should not be published publicly.
-Training Outcome
+## Training Outcome
 
 Successfully completed the Bandit Level 01 → 02 objective.
 
