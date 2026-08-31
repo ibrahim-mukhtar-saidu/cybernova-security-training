@@ -58,6 +58,7 @@ The training environment is accessed through SSH:
 
 ```bash
 ssh -p 2220 bandit3@bandit.labs.overthewire.org
+```
 
 Authentication was performed using the credential obtained from the
 previous Bandit level.

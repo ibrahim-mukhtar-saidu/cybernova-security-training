@@ -179,3 +179,19 @@ security-documentation skills.
 This documentation is based on authorized activity within the OverTheWire Bandit training environment.
 
 The techniques described should only be used against systems for which explicit authorization has been provided.
+
+## Training Outcome
+
+Successfully completed the Bandit Level 21 → 22 objective.
+
+The exercise strengthened practical understanding of:
+
+- Linux cron jobs
+- Scheduled command execution
+- Cron configuration analysis
+- Script execution context
+- File permissions and ownership
+- Automated credential handling
+- Defensive monitoring of scheduled tasks
+
+**Status: Completed**

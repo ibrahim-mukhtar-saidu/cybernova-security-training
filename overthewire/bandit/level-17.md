@@ -137,3 +137,19 @@ security-documentation skills.
 This documentation is based on authorized activity within the OverTheWire Bandit training environment.
 
 The techniques described should only be used against systems for which explicit authorization has been provided.
+
+## Training Outcome
+
+Successfully completed the Bandit Level 17 → 18 objective.
+
+The exercise strengthened practical understanding of:
+
+- File comparison
+- Baseline and modified-file analysis
+- Credential change identification
+- Linux command-line investigation
+- Difference analysis
+- Sensitive-data handling
+- Evidence validation
+
+**Status: Completed**

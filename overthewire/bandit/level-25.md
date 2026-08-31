@@ -187,9 +187,23 @@ Challenge credentials and private authentication material are not published.
 Any SSH-related sensitive material used during the exercise remains outside
 the public repository.
 
-## Learning Outcome
+## Lessons Learned
+
+This exercise reinforced several important concepts:
+
+1. SSH session behavior can depend on terminal and pseudo-terminal characteristics.
+2. A restricted login shell should be evaluated as part of the complete execution environment.
+3. Process context and parent-child relationships are important when investigating unusual shell activity.
+4. Setuid executables require careful analysis because they may execute with the privileges of their file owner.
+5. Linux permissions are an important component of privilege-boundary analysis.
+6. Unexpected shell transitions can provide useful SOC investigation signals.
+7. Authentication material and challenge-specific credentials should remain protected.
+
+## Training Outcome
 
 This level strengthened understanding of SSH sessions, restricted execution environments, terminal behavior, Linux permissions, and privileged processes.
+
+**Status: Completed**
 
 ## Limitations
 

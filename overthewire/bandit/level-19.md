@@ -148,3 +148,19 @@ security-documentation skills.
 This documentation is based on authorized activity within the OverTheWire Bandit training environment.
 
 The techniques described should only be used against systems for which explicit authorization has been provided.
+
+## Training Outcome
+
+Successfully completed the Bandit Level 19 → 20 objective.
+
+The exercise strengthened practical understanding of:
+
+- Linux Setuid permissions
+- Privilege boundaries
+- Effective user identity
+- Executable permission analysis
+- Privileged command execution
+- Least-privilege principles
+- Detection opportunities involving unexpected privilege transitions
+
+**Status: Completed**

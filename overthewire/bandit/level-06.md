@@ -100,6 +100,7 @@ Retrieve Credential
       |
       v
 Authenticate to Next Level
+```
 Initial Reconnaissance
 
 After authenticating to the Bandit Level 06 environment, the first step is to

@@ -44,6 +44,8 @@ The supplied Bandit Level 00 credential is used for authentication.
 
 Credential values are intentionally omitted from this public repository.
 
+```
+
 ## Investigation
 
 After obtaining a shell, the first step is to inspect the current directory:

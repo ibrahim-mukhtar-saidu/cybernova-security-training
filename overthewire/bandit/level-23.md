@@ -111,7 +111,19 @@ Bandit credentials are intentionally excluded from the public repository.
 
 Challenge credentials should remain outside the repository or be redacted before documentation is committed.
 
-## Learning Outcome
+## Lessons Learned
+
+This exercise reinforced several important concepts:
+
+1. Cron jobs can execute commands automatically without direct user interaction.
+2. Scheduled scripts should be reviewed for ownership, permissions, and execution context.
+3. Writable files or directories can become security-sensitive when accessed by automated processes.
+4. Script behavior should be analyzed together with the privileges of the process executing it.
+5. Temporary-file handling can introduce security risks when permissions and ownership are not carefully controlled.
+6. Scheduled-task activity can provide valuable SOC detection and investigation telemetry.
+7. Challenge credentials should be treated as sensitive evidence and excluded from public documentation.
+
+## Training Outcome
 
 This level strengthened practical understanding of Linux cron, shell scripting, file permissions, automated execution, temporary-file handling, process context, and defensive monitoring of scheduled activity.
 

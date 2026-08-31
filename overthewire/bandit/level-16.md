@@ -141,3 +141,20 @@ security-documentation skills.
 This documentation is based on authorized activity within the OverTheWire Bandit training environment.
 
 The techniques described should only be used against systems for which explicit authorization has been provided.
+
+## Training Outcome
+
+Successfully completed the Bandit Level 16 → 17 objective.
+
+The exercise strengthened practical understanding of:
+
+- Network service enumeration
+- TLS-enabled service identification
+- Secure service interaction
+- SSH private-key authentication
+- File permission management
+- Credential protection
+- Network reconnaissance
+- Evidence handling
+
+**Status: Completed**

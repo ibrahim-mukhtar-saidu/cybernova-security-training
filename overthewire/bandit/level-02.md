@@ -34,6 +34,7 @@ The relevant filename is:
 
 ```text
 spaces in this filename
+```
 
 The objective is to read the file and retrieve the credential required for
 the next level.

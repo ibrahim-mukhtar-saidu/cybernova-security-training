@@ -176,3 +176,19 @@ security-documentation skills.
 This documentation is based on authorized activity within the OverTheWire Bandit training environment.
 
 The techniques described should only be used against systems for which explicit authorization has been provided.
+
+## Training Outcome
+
+Successfully completed the Bandit Level 20 → 21 objective.
+
+The exercise strengthened practical understanding of:
+
+- Local TCP service interaction
+- Client-server communication
+- Authentication workflows
+- Network listeners
+- Process and connection analysis
+- Controlled network testing
+- Defensive monitoring of unexpected local network activity
+
+**Status: Completed**

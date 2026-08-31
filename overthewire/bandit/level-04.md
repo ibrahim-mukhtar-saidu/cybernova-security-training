@@ -54,6 +54,7 @@ The environment is accessed through SSH:
 
 ```bash
 ssh -p 2220 bandit4@bandit.labs.overthewire.org
+```
 
 Authentication uses the credential obtained from the previous level.
 

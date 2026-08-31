@@ -56,6 +56,7 @@ The command identifies the current filesystem location.
 The directory contents can then be inspected with:
 
 ls -la
+```
 
 This provides visibility into normal and hidden files and allows unusual
 filenames to be identified.
