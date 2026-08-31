@@ -525,7 +525,7 @@ Redacted output	Demonstrates credential protection
 
 Only evidence that actually exists should be referenced.
 
-## Credential-Handling Note
+## Credential Handling
 
 The unique record obtained from the challenge is authentication material
 for the training environment.
@@ -560,7 +560,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activities documented in this report were performed against the
 authorized OverTheWire Bandit training environment.
