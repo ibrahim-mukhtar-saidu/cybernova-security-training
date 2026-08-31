@@ -309,6 +309,51 @@ This property makes it especially easy to reverse.
 
 ---
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Command-line text analysis
+- Pattern recognition
+- Character-substitution analysis
+- ROT13 identification
+- ROT13 decoding
+- Standard input/output processing
+- Transformation validation
+- Plaintext verification
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied challenge artifact.
+3. Identify that the apparent text does not represent ordinary plaintext.
+4. Analyze the transformation pattern affecting the characters.
+5. Recognize the transformation as ROT13.
+6. Apply a controlled ROT13 decoding operation.
+7. Inspect the resulting plaintext for expected characteristics.
+8. Validate that the decoded value represents the required next-stage
+   training credential.
+9. Avoid reproducing the credential in public documentation.
+10. Record only the methodology and sanitized evidence.
+
+Representative sanitized commands include:
+
+    cat <challenge-file>
+
+    tr 'A-Za-z' 'N-ZA-Mn-za-m' < <challenge-file>
+
+The actual credential is intentionally excluded from this documentation.
+
+The purpose of this section is to demonstrate character-substitution
+analysis, command-line text transformation, encoding recognition, validation,
+and secure handling of authentication material within an authorized
+cybersecurity training environment.
+
+---
+
 ## Security Implications
 
 ROT13 should never be used to protect:
@@ -487,7 +532,7 @@ public repository.
 
 ---
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential discovered during this exercise is sensitive authentication
 material.
@@ -532,7 +577,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 This activity was performed within an authorized cybersecurity training
 environment.
