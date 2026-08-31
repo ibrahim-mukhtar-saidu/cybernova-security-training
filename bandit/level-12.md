@@ -455,6 +455,70 @@ The workflow was:
 This approach demonstrates iterative artifact analysis and emphasizes
 validation after every transformation.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Temporary working-directory creation
+- Preservation of the original challenge artifact
+- Hexadecimal representation analysis
+- Reverse hexadecimal conversion
+- Binary file reconstruction
+- File-type identification with `file`
+- Compression and archive identification
+- Iterative decompression and extraction
+- Artifact re-identification after each extraction
+- Command-line investigation methodology
+- Evidence validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied challenge artifact.
+3. Create a temporary working directory for analysis.
+4. Preserve the original artifact and work on a copy.
+5. Identify the initial hexadecimal representation.
+6. Reverse the hexadecimal representation to reconstruct the binary artifact.
+7. Use `file` to identify the resulting artifact type.
+8. Select the appropriate decompression or archive utility.
+9. Extract one layer at a time.
+10. Re-run file-type identification after every extraction.
+11. Continue the identify → extract → re-identify cycle until plaintext is
+    reached.
+12. Validate that the final plaintext corresponds to the expected next-stage
+    training credential.
+13. Keep the recovered credential outside public documentation.
+14. Record only sanitized evidence of the investigation process.
+
+Representative sanitized commands include:
+
+    ls -la
+
+    mktemp -d
+
+    cp <source-artifact> <working-copy>
+
+    xxd -r <hex-input> <binary-output>
+
+    file <artifact>
+
+    <appropriate-decompression-or-archive-command> <artifact>
+
+    file <extracted-artifact>
+
+The exact challenge credential and unnecessary challenge-specific output are
+intentionally omitted from this public documentation.
+
+The purpose of this section is to demonstrate layered artifact analysis,
+hexadecimal reconstruction, file-type identification, iterative extraction,
+Linux command-line investigation, and secure evidence handling within an
+authorized cybersecurity training environment.
+
+---
+
 ## Security Concepts
 
 ### Hexadecimal Representation
@@ -685,7 +749,7 @@ bandit-12-05-final-validation.png
 
 ---
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained from this exercise is authentication material for the
 OverTheWire training environment.
@@ -726,7 +790,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activities documented in this report were performed within the
 authorized OverTheWire Bandit training environment.
