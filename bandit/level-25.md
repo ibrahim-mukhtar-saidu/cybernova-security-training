@@ -129,16 +129,47 @@ The ATT&CK mappings are presented as defensive analytical context. The Bandit ex
 
 ## Techniques and Commands
 
-Representative techniques used during the challenge included:
+The investigation involved:
 
 - SSH session analysis
 - Terminal and pseudo-terminal behavior analysis
 - Restricted-shell investigation
 - Process and executable inspection
+- Shell/environment analysis
 - Linux permission analysis
+- Execution-context analysis
 - Controlled interaction with the authorized training environment
+- Secure credential handling
 
-Challenge credentials and authentication material are intentionally omitted.
+The investigation workflow was:
+
+1. Establish the authorized SSH session for the challenge environment.
+2. Observe the initial shell and terminal behavior.
+3. Identify restrictions affecting normal command execution.
+4. Inspect the available processes, executables, and execution context.
+5. Analyze the relationship between the SSH session, shell, and available programs.
+6. Determine how the restricted execution environment behaves under controlled interaction.
+7. Validate the resulting challenge state within the authorized training environment.
+8. Record only sanitized observations and evidence.
+9. Keep challenge credentials and authentication material outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    ssh -p <ssh-port> <training-user>@<authorized-host>
+
+    ps
+
+    ls -la
+
+    file <authorized-executable>
+
+    <sanitized-environment-inspection-command>
+
+The exact challenge-specific executable, authentication material, shell-bypass procedure, and credential output are intentionally omitted from the public documentation.
+
+The purpose of this section is to document the investigation methodology, Linux execution concepts, and defensive relevance without publishing unnecessary operational challenge details.
+
+---
 
 ## Evidence / Screenshot Reference
 

@@ -128,7 +128,7 @@ Exact credentials and challenge-specific authentication material are intentional
 
 ## Techniques and Commands
 
-Representative techniques used during the investigation included:
+The investigation involved:
 
 - Network service identification
 - TCP connection testing
@@ -139,11 +139,31 @@ Representative techniques used during the investigation included:
 - Success-condition detection
 - Controlled repetitive testing
 - Credential redaction
+- Evidence validation
 
-The exact brute-force script and authentication material are not reproduced in this public report because the purpose of the documentation is to demonstrate the security methodology rather than publish reusable challenge credentials or unnecessary attack automation.
+The investigation workflow was:
 
----
+1. Identify the authorized TCP authentication service and its connection parameters.
+2. Confirm the expected authentication input format.
+3. Prepare the candidate dataset in a controlled manner.
+4. Submit candidate values systematically to the authorized service.
+5. Capture and compare service responses.
+6. Identify the response condition associated with a valid candidate.
+7. Independently validate the successful result.
+8. Record only sanitized evidence for public documentation.
+9. Keep the discovered credential and challenge-specific authentication material outside the repository.
 
+Representative sanitized command patterns may include:
+
+    nc <authorized-host> <service-port>
+
+    <candidate-generation-command> | <authorized-testing-workflow>
+
+    <response-validation-command>
+
+The exact service address, candidate values, authentication implementation, successful credential, and reusable brute-force automation are intentionally omitted from the public documentation.
+
+The purpose of this section is to document the investigation methodology and defensive learning rather than publish operational authentication-testing material.
 ## Response Analysis
 
 An important part of the investigation was distinguishing unsuccessful authentication attempts from the successful response.
