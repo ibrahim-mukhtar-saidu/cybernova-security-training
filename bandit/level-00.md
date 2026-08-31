@@ -142,6 +142,37 @@ The emphasis is on establishing context before interacting with an artifact,
 using repeatable command-line investigation techniques, and protecting
 sensitive training credentials.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- SSH connection establishment
+- Remote Linux authentication
+- Command-line session management
+- Working-directory identification
+- Filesystem navigation
+- Directory and file inspection
+- Basic file-content retrieval
+- Command-line evidence collection
+- Result validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training environment.
+2. Connect to the designated training host using the provided SSH
+   parameters.
+3. Authenticate to the assigned training account.
+4. Inspect the initial working environment and identify the supplied
+   challenge artifact.
+5. Use basic Linux filesystem commands to locate and inspect the artifact.
+6. Retrieve the required training data from the identified file.
+7. Validate the result against the challenge requirements.
+8. Treat the retrieved value as sensitive training data and avoid
+   reproducing it in public documentation.
+9. Record only the methodology and sanitized evidence.
+
 ## Security Concept
 Filesystem Enumeration
 
@@ -252,7 +283,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activities documented here were performed within the authorized OverTheWire Bandit cybersecurity training environment.
 
