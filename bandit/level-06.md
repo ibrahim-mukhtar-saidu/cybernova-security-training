@@ -558,7 +558,7 @@ file output	Demonstrates artifact validation
 If screenshots are not available, the repository should not claim that they
 exist.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained during this exercise is authentication material for
 the training environment.
@@ -597,7 +597,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activity documented in this report was performed against the authorized
 OverTheWire Bandit training environment.
