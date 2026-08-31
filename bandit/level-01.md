@@ -180,6 +180,41 @@ cat ./-
 For this challenge, the explicit relative-path method is particularly easy
 to understand and demonstrates clear filesystem reasoning.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Directory and file inspection
+- Filename analysis
+- Handling filenames beginning with `-`
+- Shell option parsing awareness
+- Explicit path specification
+- Command-line file access
+- Argument interpretation analysis
+- Exact artifact identification
+- File content inspection
+- Result validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied directory and enumerate its contents.
+3. Identify that the target artifact has a filename beginning with a
+   hyphen.
+4. Recognize that command-line tools may interpret such a filename as
+   an option rather than as a file path.
+5. Use an explicit path representation to distinguish the filename from
+   command-line options.
+6. Inspect the identified artifact and retrieve its training data.
+7. Validate the result against the challenge requirements.
+8. Confirm that the result represents the required next-stage training
+   credential.
+9. Avoid reproducing the credential in public documentation.
+10. Record only the methodology and sanitized evidence.
+
 ## Security Concept
 Special Filename Handling
 
@@ -291,7 +326,7 @@ evidence/screenshots/bandit-01-command-result.png
 If the command output contains authentication material, redact the sensitive
 value before adding the screenshot to the public repository.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained from the challenge is intentionally excluded from
 this public repository.
@@ -324,7 +359,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 This activity was performed exclusively within the authorized OverTheWire
 Bandit cybersecurity training environment.
