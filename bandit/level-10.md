@@ -230,6 +230,52 @@ boundary.
 
 ---
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Command-line text inspection
+- Data representation analysis
+- Base64 identification
+- Base64 decoding
+- Standard input/output processing
+- Command pipelines
+- Transformation validation
+- Plaintext verification
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied challenge artifact.
+3. Identify that the apparent content is encoded rather than ordinary
+   plaintext.
+4. Recognize the encoding as Base64.
+5. Apply a controlled Base64 decoding operation.
+6. Validate the resulting plaintext.
+7. Confirm that the decoded value represents the required next-stage
+   training credential.
+8. Avoid reproducing the credential in public documentation.
+9. Record only the methodology and sanitized evidence.
+
+Representative sanitized commands include:
+
+    base64 -d <encoded-file>
+
+    cat <encoded-file> | base64 -d
+
+The actual credential is intentionally omitted from this public
+documentation.
+
+The purpose of this section is to demonstrate encoding identification,
+command-line data transformation, pipeline usage, validation, and secure
+handling of authentication material within an authorized cybersecurity
+training environment.
+
+---
+
 ## Security Implications
 
 Base64 is frequently encountered during security investigations.
@@ -420,7 +466,7 @@ the public repository.
 
 ---
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential discovered during this exercise is sensitive authentication
 material.
@@ -465,7 +511,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 This activity was conducted against the OverTheWire Bandit training
 environment for authorized cybersecurity education.
