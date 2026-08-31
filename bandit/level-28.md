@@ -171,20 +171,52 @@ The ATT&CK mapping is presented as defensive analytical context. The Bandit exer
 
 ## Techniques and Commands
 
-Representative techniques used during the challenge included:
+The investigation involved:
 
-- Git repository cloning.
-- Repository metadata inspection.
-- Tracked-file enumeration.
-- Commit-history inspection.
-- Revision comparison.
-- Historical-content analysis.
-- Deleted-content investigation.
-- Source-control security analysis.
-- Sensitive-data identification.
-- Evidence redaction and credential-handling practices.
+- Git repository cloning
+- Repository metadata inspection
+- Tracked-file enumeration
+- Commit-history inspection
+- Revision comparison
+- Historical-content analysis
+- Deleted-content investigation
+- Git object and revision inspection
+- Source-control security analysis
+- Sensitive-data identification
+- Evidence redaction and credential-handling practices
 
-Challenge-specific credentials and exact sensitive authentication material are intentionally omitted.
+The investigation workflow was:
+
+1. Access the authorized training repository using the provided challenge credentials.
+2. Clone or inspect the repository within the controlled training environment.
+3. Review the repository structure and currently tracked files.
+4. Inspect the commit history for relevant revisions.
+5. Compare current content with previous revisions.
+6. Investigate historical versions of files that may no longer contain the same content.
+7. Identify security-relevant information present in repository history.
+8. Validate the historical finding against the authorized challenge objective.
+9. Record only sanitized evidence for public documentation.
+10. Keep discovered credentials and sensitive authentication material outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    git clone <authorized-repository>
+
+    git status
+
+    git log --oneline --all
+
+    git log --stat
+
+    git show <sanitized-revision>
+
+    git diff <sanitized-revision> <sanitized-revision>
+
+    git log --all -- <sanitized-file>
+
+The exact repository address, credentials, revision identifiers, sensitive historical content, and challenge-specific authentication material are intentionally omitted from the public documentation.
+
+The purpose of this section is to demonstrate source-control investigation, historical revision analysis, deleted-content investigation, and secure evidence handling without publishing sensitive challenge data.
 
 ---
 
