@@ -70,6 +70,62 @@ The workflow emphasizes change control and verification rather than treating `gi
 
 ---
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Git repository instruction analysis
+- Required-file identification
+- File creation and content validation
+- Git working-tree inspection
+- Git staging-area analysis
+- Commit creation and validation
+- Remote repository inspection
+- Branch verification
+- Authorized push operations
+- Server-side response validation
+- Source-control change management
+- Credential redaction and secure evidence handling
+
+The investigation workflow was:
+
+1. Review the repository instructions and identify the required repository operation.
+2. Determine the expected filename and training content.
+3. Create the required file within the authorized working directory.
+4. Inspect the working-tree state before staging changes.
+5. Stage only the intended file.
+6. Review the staged change before creating the commit.
+7. Create a descriptive commit containing only the intended change.
+8. Inspect the configured remote and verify the target branch.
+9. Push the commit only to the authorized training repository.
+10. Analyze the server response to determine whether the training objective was satisfied.
+11. Record sanitized evidence of the completed workflow.
+12. Keep authentication material outside the repository and public documentation.
+
+Representative sanitized investigation commands may include:
+
+    git status
+
+    git diff
+
+    git add <required-file>
+
+    git diff --cached
+
+    git commit -m "<sanitized-commit-message>"
+
+    git remote -v
+
+    git branch --show-current
+
+    git push <authorized-remote> <authorized-branch>
+
+The exact repository address, required challenge content, credentials, authentication material, and challenge-specific validation response are intentionally omitted from the public documentation.
+
+The purpose of this section is to demonstrate controlled Git change management, staging and commit validation, remote/branch verification, authorized push operations, and secure evidence handling without publishing sensitive challenge data.
+
+---
+
 ## Security Concepts
 
 This level demonstrates several important source-control concepts:
