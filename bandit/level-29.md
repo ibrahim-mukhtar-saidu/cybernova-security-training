@@ -172,19 +172,52 @@ The ATT&CK mapping is presented as defensive analytical context. The Bandit exer
 
 ## Techniques and Commands
 
-Representative techniques used during the challenge included:
+The investigation involved:
 
-- Git repository cloning.
-- Branch enumeration.
-- Local and remote branch inspection.
-- Branch comparison.
-- Commit-history inspection.
-- Development-artifact investigation.
-- Repository-wide security analysis.
-- Sensitive-data identification.
-- Credential-handling and evidence-redaction practices.
+- Git repository cloning
+- Branch enumeration
+- Local and remote branch inspection
+- Branch comparison
+- Commit-history inspection
+- Development-artifact investigation
+- Historical revision analysis
+- Repository-wide security analysis
+- Sensitive-data identification
+- Evidence redaction and credential-handling practices
 
-Challenge-specific credentials and exact sensitive repository content are intentionally omitted.
+The investigation workflow was:
+
+1. Access the authorized training repository using the provided challenge credentials.
+2. Clone or inspect the repository within the controlled training environment.
+3. Review the repository structure and identify available branches.
+4. Enumerate local and remote branch references.
+5. Compare the default branch with other available repository states.
+6. Inspect commits associated with relevant development branches.
+7. Review historical revisions for security-relevant content.
+8. Determine whether information absent from the default branch is present elsewhere in the repository.
+9. Validate the finding against the authorized challenge objective.
+10. Record only sanitized repository-analysis evidence.
+11. Keep discovered credentials and sensitive authentication material outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    git clone <authorized-repository>
+
+    git status
+
+    git branch --all
+
+    git log --oneline --all
+
+    git log --oneline <sanitized-branch>
+
+    git diff <default-branch> <sanitized-development-branch>
+
+    git show <sanitized-revision>
+
+The exact repository address, credentials, branch names, revision identifiers, sensitive historical content, and challenge-specific authentication material are intentionally omitted from the public documentation.
+
+The purpose of this section is to demonstrate branch enumeration, source-control investigation, historical analysis, and secure evidence handling without publishing sensitive challenge data.
 
 ---
 
