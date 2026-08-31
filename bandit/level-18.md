@@ -41,11 +41,13 @@ The investigation involved:
 - Restricted shell analysis
 - Secure credential handling
 
-A representative command pattern is:
+A sanitized command pattern is:
 
-    ssh -p 2220 bandit18@bandit.labs.overthewire.org cat readme
+    ssh -p <ssh-port> <training-user>@<authorized-host> <authorized-command>
 
 This demonstrates that SSH can be used to request a specific remote command rather than relying exclusively on an interactive shell.
+
+The actual challenge command and credential output are intentionally omitted from the public documentation.
 
 ## Security Concepts
 
@@ -89,9 +91,11 @@ These concepts are relevant when investigating potentially suspicious SSH activi
 The exercise provides useful defensive context for:
 
 - **T1021.004 — Remote Services: SSH**
-- **T1059 — Command and Scripting Interpreter**
+- **T1059.004 — Command and Scripting Interpreter: Unix Shell**
 
-The mapping is included for defensive learning and should not be interpreted as evidence that the Bandit challenge itself represents a real-world intrusion.
+These techniques describe the remote-access and command-execution concepts demonstrated by the exercise.
+
+The mappings are provided for defensive learning and should not be interpreted as evidence that the Bandit challenge itself represents a real-world intrusion.
 
 ## Evidence / Screenshot Reference
 

@@ -30,6 +30,45 @@ The investigation focused on:
 6. Observing the resulting credential retrieval mechanism.
 7. Keeping challenge credentials outside the repository.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux cron analysis
+- Scheduled-task investigation
+- Shell-script analysis
+- File ownership and permission inspection
+- Writable-directory analysis
+- User and process-context analysis
+- Temporary-file handling
+- Automated file processing
+- Secure credential handling
+
+The investigation workflow was:
+
+1. Inspect the scheduled-task configuration relevant to the challenge.
+2. Identify the script executed by the scheduled task.
+3. Review the script's ownership, permissions, and execution logic.
+4. Determine which directories and files the automated process accesses.
+5. Analyze whether user-controlled files can influence the scheduled process.
+6. Trace the execution flow and resulting file-processing behavior.
+7. Validate the challenge result within the authorized training environment.
+8. Keep credentials and other sensitive challenge data outside the public repository.
+
+Representative sanitized investigation commands include:
+
+    ls -la /etc/cron.d/
+
+    cat /etc/cron.d/<relevant-job>
+
+    ls -la /usr/bin/<relevant-script>
+
+    cat /usr/bin/<relevant-script>
+
+    find <authorized-directory> -maxdepth 1 -type f -ls
+
+The exact challenge-specific script name, filenames, commands, and credential output are intentionally omitted from the public documentation.
+
 ## Security Concepts
 
 - Linux cron

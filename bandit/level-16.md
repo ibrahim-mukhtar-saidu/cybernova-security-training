@@ -20,7 +20,17 @@ Authenticate to the Bandit Level 17 account using the private SSH key obtained d
 
 ## Investigation Approach
 
-The challenge involved identifying the appropriate network service, interacting with the service securely, retrieving the SSH private key, protecting it with restrictive permissions, validating the key, and using it for SSH authentication.
+The challenge focused on identifying the correct TLS-enabled service and securely obtaining the SSH private key required for the next level.
+
+The investigation involved:
+
+1. Enumerating the available network services in the authorized training environment.
+2. Identifying the TLS-enabled service relevant to the challenge.
+3. Interacting with the service using appropriate TLS tooling.
+4. Retrieving the SSH private key from the authorized challenge endpoint.
+5. Protecting the recovered private key with restrictive file permissions.
+6. Validating the key format and using it for SSH authentication to the next level.
+7. Keeping the private key outside the public repository.
 
 ## Techniques and Commands
 
@@ -72,12 +82,13 @@ This challenge demonstrates practical skills relevant to security operations:
 
 ## MITRE ATT&CK Relevance
 
-Potentially relevant defensive ATT&CK techniques include:
+The most directly relevant ATT&CK technique for the authentication portion of this exercise is:
 
-- **T1078 — Valid Accounts**
 - **T1021.004 — Remote Services: SSH**
 
-These mappings are provided for defensive learning.
+The exercise also provides contextual awareness of **T1078 — Valid Accounts**, because successful SSH authentication depends on valid account credentials. However, the Bandit challenge itself is an authorized training exercise and should not be presented as evidence of adversary use of valid accounts.
+
+These mappings are provided for defensive learning and contextual analysis.
 
 ## Evidence / Screenshot Reference
 

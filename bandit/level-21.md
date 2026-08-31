@@ -16,7 +16,7 @@ Investigate a scheduled task that periodically executes a script and determine h
 | Starting Account | bandit21 |
 | Target Account | bandit22 |
 | Authorization | Authorized cybersecurity training lab |
-| Investigation Type | Network service interaction |
+| Investigation Type | Scheduled-task and script analysis |
 
 ## Investigation Approach
 
@@ -37,13 +37,25 @@ The investigation involved:
 The investigation involved:
 
 - Linux cron
-- Scheduled task analysis
+- Scheduled-task analysis
 - File inspection
 - Shell-script analysis
 - File permissions
+- User/execution-context analysis
 - Secure credential handling
 
-Representative investigation commands include:
+The investigation workflow was:
+
+1. Inspect the system's scheduled-task configuration.
+2. Identify the cron job relevant to the challenge.
+3. Determine which command or script the scheduled task executes.
+4. Inspect the referenced script and its ownership and permissions.
+5. Analyze the script's execution behavior and referenced resources.
+6. Determine how the scheduled execution produces the required challenge result.
+7. Validate the result without exposing the credential.
+8. Keep sensitive challenge data outside the public repository.
+
+Representative sanitized investigation commands include:
 
     ls -la /etc/cron.d/
 
@@ -53,7 +65,7 @@ Representative investigation commands include:
 
     cat /usr/bin/<relevant-script>
 
-The exact filenames and sensitive credential output should not be included in public documentation unless they are intentionally sanitized.
+The exact challenge filenames and sensitive credential output are intentionally omitted from the public documentation.
 
 ## Security Concepts
 

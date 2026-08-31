@@ -31,6 +31,26 @@ The investigation focused on:
 5. Executing the authorized challenge action through the provided mechanism.
 6. Obtaining the next-level credential without storing it in the repository.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux file and permission inspection
+- Setuid-bit identification
+- Executable ownership analysis
+- Privilege-context analysis
+- Authorized execution of the provided setuid mechanism
+- Secure credential handling
+
+A sanitized inspection workflow is:
+
+    ls -l <setuid-executable>
+    file <setuid-executable>
+
+The permission and ownership information were used to determine whether the executable had the setuid bit and which account owned it.
+
+The challenge-specific executable name and credential output are intentionally omitted from the public documentation.
+
 ## Security Concepts
 
 ### Setuid

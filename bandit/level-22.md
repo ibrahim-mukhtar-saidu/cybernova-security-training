@@ -38,22 +38,34 @@ The investigation focused on:
 The investigation involved:
 
 - Linux cron analysis
+- Scheduled-task investigation
 - Shell-script analysis
 - Variable and command substitution
 - MD5 hashing
 - File inspection
-- Automated-task investigation
+- Execution-context analysis
 - Secure credential handling
 
-Representative investigation commands include:
+The investigation workflow was:
+
+1. Inspect the scheduled-task configuration relevant to the challenge.
+2. Identify the script executed by the scheduled task.
+3. Inspect the script's ownership, permissions, and command logic.
+4. Trace the variables and command substitutions used by the script.
+5. Determine the input used by the hashing operation.
+6. Reproduce the deterministic hash calculation in the authorized training environment.
+7. Identify the resulting output artifact without exposing the credential.
+8. Validate the challenge result and keep sensitive data outside the public repository.
+
+Representative sanitized investigation commands include:
 
     cat /etc/cron.d/<relevant-job>
 
     cat /usr/bin/<relevant-script>
 
-    md5sum
+    md5sum <sanitized-input>
 
-The exact script name, generated filename, and credential output should be sanitized when documenting the exercise publicly.
+The exact script name, generated filename, input value, and credential output are intentionally omitted from the public documentation.
 
 ## Security Concepts
 

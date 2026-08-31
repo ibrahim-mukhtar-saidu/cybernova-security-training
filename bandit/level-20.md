@@ -42,15 +42,26 @@ The investigation involved:
 - Localhost communication
 - TCP listener configuration
 - Setuid execution
+- Privileged network-process analysis
 - Secure credential handling
 
-A confirmed command from the investigation was:
+The investigation workflow was:
+
+1. Access the Bandit Level 20 environment through the authorized SSH service.
+2. Prepare a local TCP listener on the designated challenge port.
+3. Verify that the listener is active and accepting connections.
+4. Execute the provided setuid network utility according to the challenge requirements.
+5. Observe the communication between the local endpoints.
+6. Validate the returned challenge result without exposing the credential.
+7. Keep sensitive challenge data outside the public repository.
+
+A confirmed listener command from the investigation was:
 
     nc -lv 31337
 
 This creates a TCP listener on port `31337` for the authorized training exercise.
 
-The challenge also involved a provided setuid network utility that communicates with a local TCP service.
+The challenge also involved a provided setuid network utility that communicates with a local TCP service. The challenge-specific utility invocation and credential output are intentionally omitted from the public documentation.
 
 ## Security Concepts
 

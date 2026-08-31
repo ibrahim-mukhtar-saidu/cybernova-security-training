@@ -40,11 +40,13 @@ The investigation involved:
 - diff for identifying differences
 - Secure credential handling
 
-A representative comparison command is:
+A sanitized representative comparison command is:
 
-    diff passwords.old passwords.new
+    diff <password-file-1> <password-file-2>
 
-The differing entry identifies the credential required for the next authentication step.
+The comparison identifies the differing entry without documenting the actual challenge credential or relying on placeholder filenames that were not used in this repository.
+
+The differing entry identifies the credential required for the next authorized authentication step.
 
 ## Security Concepts
 
@@ -80,14 +82,14 @@ Potential defensive applications include:
 
 This exercise primarily develops defensive investigation skills rather than demonstrating a specific adversary technique.
 
-Relevant concepts include:
+The authentication portion provides contextual awareness of:
 
-- File and directory discovery
-- Credential access awareness
-- Valid account authentication
-- Investigation of changes to security-relevant files
+- **T1078 — Valid Accounts**
+- **T1021.004 — Remote Services: SSH**
 
-MITRE ATT&CK mappings should be treated as contextual rather than claiming that the Bandit challenge itself represents real-world adversary activity.
+The file-comparison activity itself is better understood as a defensive investigation technique for identifying changes in security-relevant files rather than as a direct ATT&CK technique.
+
+These mappings are provided for defensive learning and contextual analysis. The Bandit challenge is an authorized training exercise and should not be presented as evidence of adversary activity.
 
 ## Evidence / Screenshot Reference
 
