@@ -30,6 +30,38 @@ defensive/SOC relevance, lessons learned, and selected supporting evidence.
 
 ---
 
+## Training Portfolio
+
+The repository is organized into platform-specific training collections and
+defensive-security exercises. New training can be added without restructuring
+the repository.
+
+| Training Area | Scope | Status |
+|---|---|---|
+| [OverTheWire Bandit](overthewire/bandit/) | Linux, command-line investigation, filesystems, permissions, SSH, networking, encoding, compression | Completed — 00 → 33 |
+| [TryHackMe](tryhackme/) | Practical cybersecurity rooms across Linux, networking, web security, reconnaissance, vulnerability analysis, and defensive concepts | Active |
+| [picoCTF](picoctf/) | CTF challenges covering cryptography, web security, forensics, reverse engineering, exploitation, and general security analysis | Initialized |
+| [Hack The Box](hackthebox/) | Authorized laboratories covering reconnaissance, services, Linux/Windows security, web security, privilege escalation, and enterprise security | Initialized |
+| [Defensive Security](defensive-security/) | Security monitoring, detection engineering, threat hunting, incident response, SIEM workflows, and defensive analysis | Initialized |
+
+### Training Philosophy
+
+The objective is to build practical, transferable cybersecurity capability
+rather than simply accumulate completed challenges.
+
+Training activities are documented with emphasis on:
+
+- Technical investigation and evidence-based reasoning
+- Linux and networking fundamentals
+- Security enumeration and analysis
+- Vulnerability and authentication concepts
+- Detection and defensive thinking
+- SOC and incident-response relevance
+- Clear technical documentation
+- Ethical and authorized security practice
+
+---
+
 
 ## Objectives
 
