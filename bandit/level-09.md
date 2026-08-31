@@ -249,6 +249,53 @@ that a value is malicious, sensitive, or relevant.
 
 ---
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- File metadata inspection
+- Binary artifact analysis
+- Printable-string extraction
+- `strings` utility usage
+- Output filtering
+- Pattern-based searching
+- Command-line pipeline construction
+- Candidate credential identification
+- Result validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied challenge artifact.
+3. Determine that the file contains binary or mixed-format data rather than
+   ordinary plaintext.
+4. Extract printable character sequences from the artifact.
+5. Filter the extracted output for relevant candidate strings.
+6. Validate the candidate result against the challenge requirements.
+7. Confirm that the result represents the required next-stage training
+   credential.
+8. Avoid reproducing the credential in public documentation.
+9. Record only the methodology and sanitized evidence.
+
+Representative sanitized commands include:
+
+    strings <artifact>
+
+    strings <artifact> | grep -E '<sanitized-pattern>'
+
+The actual credential and unnecessary challenge-specific authentication
+material are intentionally excluded from this public documentation.
+
+The purpose of this section is to demonstrate binary artifact triage,
+printable-string extraction, command-line filtering, result validation, and
+secure handling of authentication material within an authorized training
+environment.
+
+---
+
 ## Security Concept
 
 ### Binary Artifact Triage
@@ -460,7 +507,7 @@ Evidence should never be fabricated.
 
 ---
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained during this exercise is sensitive authentication
 material.
@@ -498,7 +545,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 This activity was conducted against the OverTheWire Bandit training
 environment, which is specifically provided for cybersecurity education.
