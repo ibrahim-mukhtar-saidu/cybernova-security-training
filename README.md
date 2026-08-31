@@ -2,8 +2,8 @@
 
 ![Platform](https://img.shields.io/badge/Platform-OverTheWire-blue)
 ![Focus](https://img.shields.io/badge/Focus-Linux%20%7C%20Networking%20%7C%20Security-red)
-![Levels](https://img.shields.io/badge/Bandit-00--20-green)
-![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+![Levels](https://img.shields.io/badge/Bandit-00--33-green)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 
 ## Overview
 
@@ -58,7 +58,7 @@ The primary objectives of this training are to:
 | Networking Tools | Nmap, OpenSSL, SSH |
 | Target Environment | OverTheWire Bandit Linux server |
 | Training Type | Authorized cybersecurity lab |
-| Documented Range | Bandit 00 → 20 |
+| Documented Range | Bandit 00 → 33 |
 
 ---
 
@@ -128,7 +128,7 @@ The primary objectives of this training are to:
 | 17 → 18 | File comparison | Completed |
 | 18 → 19 | Restricted shell / non-interactive SSH | Completed |
 | 19 → 20 | SUID privilege escalation | Completed |
-| 20 → 21 | TCP client/server authentication | In Progress |
+| 20 → 21 | TCP client/server authentication | Completed |
 
 ---
 
@@ -138,12 +138,13 @@ Each level has a dedicated technical report:
 
 ```text
 bandit/
+├── README.md
 ├── level-00.md
 ├── level-01.md
 ├── level-02.md
 ├── ...
-├── level-19.md
-└── level-20.md
+├── level-32.md
+└── level-33.md
 
 Each report documents:
 
@@ -290,12 +291,13 @@ skills rather than memorization of individual commands.
 
 Project Status
 
-Current training: Bandit 20 → 21
+Training status: Bandit 00 → 33 completed
 
-Documented range: Bandit 00 → 20
+Documented range: Bandit 00 → 33
 
-Next objective: Complete the remaining Bandit challenges and continue
-expanding the technical notes and evidence collection.
+Current objective: Consolidate the completed training into a consistent,
+professional cybersecurity learning record and continue expanding the
+technical notes and defensive security analysis.
 
 Author
 
