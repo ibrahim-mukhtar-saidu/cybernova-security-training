@@ -1,0 +1,135 @@
+# Bandit Level 22 → 23
+
+## Objective
+
+Analyze a scheduled cron task and the script it executes to understand how a dynamically generated filename is derived and how the resulting file is used to obtain the Bandit Level 23 credential.
+
+## Investigation Approach
+
+The challenge focused on analyzing an automated Linux task and understanding the relationship between a cron configuration, the executed script, and a dynamically generated output filename.
+
+The investigation focused on:
+
+1. Accessing the Bandit Level 22 environment.
+2. Inspecting the cron configuration associated with the account.
+3. Identifying the script executed by the scheduled task.
+4. Reviewing the script logic and variables used to construct its output filename.
+5. Identifying the hashing operation used by the script.
+6. Reproducing the filename-generation logic in the authorized training environment.
+7. Inspecting the resulting file and treating its contents as sensitive credential material.
+8. Keeping the credential outside the public repository.
+
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux cron analysis
+- Shell-script analysis
+- Variable and command substitution
+- MD5 hashing
+- File inspection
+- Automated-task investigation
+- Secure credential handling
+
+Representative investigation commands include:
+
+    cat /etc/cron.d/<relevant-job>
+
+    cat /usr/bin/<relevant-script>
+
+    md5sum
+
+The exact script name, generated filename, and credential output should be sanitized when documenting the exercise publicly.
+
+## Security Concepts
+
+### Cron-Based Execution
+
+Cron allows commands and scripts to execute automatically according to a configured schedule.
+
+From a defensive perspective, cron configuration should be reviewed when investigating unexpected automated activity or possible persistence.
+
+### Script Analysis
+
+The scheduled script is an important security artifact.
+
+Analysts should examine:
+
+- Script ownership
+- File permissions
+- Environment variables
+- Command substitution
+- Hashing operations
+- Input sources
+- Output files
+- User execution context
+
+Understanding the complete execution chain is often more important than looking at the cron entry alone.
+
+### Hash-Based Filenames
+
+The challenge demonstrates how a script can use a hash function to derive a filename.
+
+Hashing can be useful for deterministic identifiers, but security analysts should understand exactly what data is being hashed and whether the resulting value is being used as a security boundary.
+
+### Credential Security
+
+Credentials obtained during a controlled security exercise should be treated as sensitive information.
+
+Challenge credentials were not included in this repository.
+
+## SOC / Blue Team Relevance
+
+Cron and scheduled-script analysis can help analysts investigate:
+
+- Persistence mechanisms
+- Unauthorized scheduled tasks
+- Modified administrative scripts
+- Suspicious command execution
+- Unexpected file creation
+- Automated credential access
+
+A useful investigation workflow is:
+
+**Cron configuration → Executed script → Execution context → Command logic → Output artifact**
+
+This approach helps establish how an automated process operates and what security-relevant artifacts it produces.
+
+## MITRE ATT&CK Relevance
+
+This exercise provides defensive learning related to:
+
+- **T1053 — Scheduled Task/Job**
+- **T1053.003 — Scheduled Task/Job: Cron**
+- **T1059.004 — Command and Scripting Interpreter: Unix Shell**
+
+These mappings are provided for security-learning purposes and do not imply that the Bandit challenge itself represents a real-world intrusion.
+
+## Evidence / Screenshot Reference
+
+Recommended sanitized evidence:
+
+- `evidence/screenshots/bandit-22-cron-configuration.png`
+- `evidence/screenshots/bandit-22-script-analysis.png`
+- `evidence/screenshots/bandit-22-hash-calculation.png`
+- `evidence/screenshots/bandit-22-result-redacted.png`
+
+Screenshots must not contain passwords, tokens, private keys, or other sensitive credentials.
+
+Because the original Level 22 command history was not available during documentation recovery, these filenames represent recommended evidence rather than proof that the screenshots currently exist.
+
+## Credential Handling
+
+No Bandit password is intentionally stored in this repository.
+
+Challenge credentials should remain outside the public project directory or be redacted before documentation and screenshots are committed.
+
+## Learning Outcome
+
+This level strengthened practical understanding of Linux cron, scheduled-task investigation, shell-script analysis, hashing operations, dynamic filenames, automated execution, and secure credential handling.
+
+## Ethical Use
+
+This documentation is based on authorized activity within the OverTheWire Bandit training environment.
+
+The techniques described should only be used against systems for which explicit authorization has been provided.

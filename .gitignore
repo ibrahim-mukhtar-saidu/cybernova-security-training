@@ -1,0 +1,12 @@
+# CTF credentials and secrets
+bandit-credentials.txt
+*.sshkey
+*.pem
+*.key
+key.txt
+*credential*
+*password*
+*secret*
+
+# Local challenge workspaces
+bandit*-work/
