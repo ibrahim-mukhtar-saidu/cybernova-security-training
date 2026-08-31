@@ -253,44 +253,49 @@ classifying activity as suspicious.
 
 ## Techniques and Commands
 
-The challenge involved several practical analysis techniques:
+The investigation involved:
 
-### Restricted-Shell Analysis
+- SSH session management
+- Restricted-shell analysis
+- Shell parsing analysis
+- Input transformation analysis
+- Environment inspection
+- Process and execution-context analysis
+- Shell/interpreter identification
+- Controlled shell-transition analysis
+- Execution-context verification
+- Sanitized evidence collection
+- Secure credential handling
 
-Observed how the command interface transformed user input and identified the
-difference between the visible interface and the underlying execution
-environment.
+The investigation workflow was:
 
-### Shell Parsing Analysis
+1. Establish the authorized SSH session within the controlled training environment.
+2. Observe how the restricted command interface transforms or interprets user input.
+3. Determine whether the observed behavior is caused by input transformation, shell parsing, or execution-context restrictions.
+4. Analyze the relationship between the visible command interface and the underlying shell or interpreter.
+5. Inspect the relevant environment and process context using safe, authorized observations.
+6. Validate the resulting execution context independently rather than relying only on visible command behavior.
+7. Confirm successful progression within the authorized training environment.
+8. Record only sanitized observations and evidence.
+9. Keep challenge credentials, authentication material, and unnecessary bypass details outside the public repository.
 
-Examined how shell parsing rules affect command interpretation and execution.
+Representative sanitized investigation commands may include:
 
-### Environment Analysis
+    ssh -p <ssh-port> <training-user>@<authorized-host>
 
-Considered environment variables and execution context when determining which
-shell or interpreter was active.
+    <sanitized-command-observation>
 
-### Process Context Analysis
+    <sanitized-environment-inspection>
 
-Used execution-context information to distinguish the restricted interface from
-the underlying shell environment.
+    <sanitized-process-inspection>
 
-### Controlled Shell Transition
+    <sanitized-execution-context-check>
 
-Verified the resulting execution environment within the authorized training
-lab.
+The exact challenge-specific shell-bypass sequence, credentials, account identifiers, and authentication material are intentionally omitted from the public documentation.
 
-Representative command categories included:
+The purpose of this section is to demonstrate restricted-shell analysis, command interpretation, execution-context investigation, and secure evidence handling without publishing unnecessary operational challenge details.
 
-- SSH session management.
-- Shell built-ins.
-- Environment inspection.
-- Process inspection.
-- Command interpretation testing.
-- Execution-context verification.
-
-Exact challenge-specific bypass commands and authentication material are
-intentionally excluded from the public documentation.
+---
 
 ## Evidence / Screenshot Reference
 
