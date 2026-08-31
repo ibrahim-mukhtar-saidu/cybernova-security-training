@@ -323,6 +323,58 @@ The workflow was:
 The investigation demonstrates both offensive-awareness and defensive
 understanding of SSH key-based authentication.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- SSH session management
+- Linux filesystem enumeration
+- SSH private-key identification
+- File-type and metadata inspection
+- Private-key permission analysis
+- OpenSSH identity-file configuration
+- Public-key authentication analysis
+- Authentication-context verification
+- Secure credential handling
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the home directory for relevant authentication artifacts.
+3. Identify the supplied SSH private key without exposing its contents.
+4. Review the key file type and filesystem permissions.
+5. Apply restrictive permissions when required by the authorized training
+   environment.
+6. Use the OpenSSH client with the appropriate identity file.
+7. Verify successful authentication to the authorized target account.
+8. Retrieve the required next-stage training information.
+9. Keep the private key and recovered credentials outside public
+   documentation.
+10. Record only sanitized evidence of the authentication workflow.
+
+Representative sanitized commands include:
+
+    ls -la
+
+    file <private-key>
+
+    ls -l <private-key>
+
+    chmod 600 <private-key>
+
+    ssh -i <private-key> -p <ssh-port> <target-user>@<authorized-host>
+
+The actual private-key contents, credentials, account-specific authentication
+material, and unnecessary challenge infrastructure details are intentionally
+excluded from this public documentation.
+
+The purpose of this section is to demonstrate SSH key-based authentication,
+Linux permissions, authentication-material protection, and evidence handling
+within an authorized cybersecurity training environment.
+
+---
+
 ## Security Concepts
 
 ### Public-Key Cryptography

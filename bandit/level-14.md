@@ -384,6 +384,49 @@ The workflow was:
 The exercise demonstrates basic network-service investigation, TCP client
 interaction, authentication exchange, and evidence validation.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Local TCP service analysis
+- Host and port identification
+- TCP client/server communication
+- Localhost service interaction
+- Netcat (`nc`) usage
+- Standard input/output redirection
+- Authentication-response analysis
+- Service-response validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Confirm the authorized Bandit training environment and current account.
+2. Identify the specified localhost TCP service and port.
+3. Establish a controlled TCP connection using an appropriate client.
+4. Provide the current-level authentication value only within the authorized
+   training service.
+5. Observe and validate the service response.
+6. Confirm successful retrieval of the next-stage training information.
+7. Avoid recording credentials in public documentation or screenshots.
+8. Preserve only sanitized evidence of the service interaction.
+
+Representative sanitized commands include:
+
+    nc <authorized-host> <service-port>
+
+    printf '%s\\n' '<CURRENT_CREDENTIAL>' | nc <authorized-host> <service-port>
+
+The actual credential, challenge-specific response, and unnecessary
+authentication material are intentionally omitted from this public
+documentation.
+
+The purpose of this section is to demonstrate TCP service interaction,
+command-line network analysis, authentication-response validation, and secure
+handling of sensitive training data within an authorized environment.
+
+---
+
 ## Security Concepts
 
 ### TCP
