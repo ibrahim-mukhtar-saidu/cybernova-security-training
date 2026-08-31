@@ -167,18 +167,47 @@ The ATT&CK mapping is presented as defensive analytical context. The Bandit exer
 
 ## Techniques and Commands
 
-Representative techniques used during the challenge included:
+The investigation involved:
 
-- Git repository cloning.
-- Repository metadata inspection.
-- Tracked-file enumeration.
-- Commit-history inspection.
-- Historical revision analysis.
-- Source-control content comparison.
-- Sensitive-data identification.
-- Credential-handling and evidence-redaction practices.
+- Git repository cloning
+- Repository metadata inspection
+- Tracked-file enumeration
+- Commit-history inspection
+- Historical revision analysis
+- Source-control content comparison
+- Repository object inspection
+- Sensitive-data identification
+- Credential-handling and evidence-redaction practices
 
-Challenge-specific credentials and exact sensitive authentication material are intentionally omitted.
+The investigation workflow was:
+
+1. Access the authorized training repository using the provided challenge credentials.
+2. Clone or inspect the repository within the controlled training environment.
+3. Review the repository structure and tracked files.
+4. Inspect commit history and identify relevant historical revisions.
+5. Compare current content with previous revisions to identify changes.
+6. Determine whether sensitive information was present in repository history.
+7. Validate the historical finding against the authorized challenge objective.
+8. Record only sanitized repository-analysis evidence.
+9. Keep discovered credentials and sensitive authentication material outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    git clone <authorized-repository>
+
+    git status
+
+    git log --oneline
+
+    git log --all --oneline
+
+    git show <sanitized-revision>
+
+    git diff <sanitized-revision> <sanitized-revision>
+
+The exact repository address, credentials, sensitive historical content, and challenge-specific authentication material are intentionally omitted from the public documentation.
+
+The purpose of this section is to demonstrate source-control investigation, historical revision analysis, and secure evidence handling without publishing sensitive challenge data.
 
 ---
 
