@@ -257,6 +257,52 @@ Large amounts of security telemetry cannot normally be reviewed manually.
 Analysts use filtering, searching, and correlation techniques to identify
 events requiring further investigation.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Command-line file inspection
+- Targeted text searching
+- Pattern matching with `grep`
+- Exact-string identification
+- Output filtering
+- Standard input/output processing
+- Search-result validation
+- Candidate credential identification
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied challenge artifact.
+3. Determine the appropriate search strategy from the challenge
+   requirements.
+4. Search the artifact for the relevant target string or pattern.
+5. Filter the output to isolate the matching result.
+6. Validate the result against the expected challenge context.
+7. Confirm that the identified value represents the required next-stage
+   training credential.
+8. Avoid reproducing the credential in public documentation.
+9. Record only the methodology and sanitized evidence.
+
+Representative sanitized commands include:
+
+    grep -n '<sanitized-pattern>' <artifact>
+
+    grep '<sanitized-pattern>' <artifact> | <sanitized-filter>
+
+The actual credential and unnecessary challenge-specific authentication
+material are intentionally excluded from this public documentation.
+
+The purpose of this section is to demonstrate targeted text searching,
+command-line filtering, pattern recognition, result validation, and secure
+handling of authentication material within an authorized cybersecurity
+training environment.
+
+---
+
 ## Security Concept
 Pattern Matching
 
@@ -396,7 +442,7 @@ Redacted result	Demonstrates secure documentation
 
 Only evidence that actually exists should be referenced in the repository.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential discovered during this exercise is authentication material for
 the authorized training environment.
@@ -433,7 +479,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activities documented in this report were performed against the
 authorized OverTheWire Bandit training environment.
