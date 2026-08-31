@@ -173,6 +173,38 @@ convention rather than an access-control mechanism.
 A user with sufficient filesystem permissions can still discover and access
 such files.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Directory and file inspection
+- Hidden-file discovery
+- Command-line filesystem analysis
+- Targeted artifact identification
+- File content inspection
+- Search-result validation
+- Candidate credential identification
+- Evidence preservation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied directory and enumerate its contents.
+3. Determine that the required artifact may not be visible through a
+   basic directory listing.
+4. Inspect the directory for hidden or otherwise non-obvious files.
+5. Identify the relevant challenge artifact.
+6. Inspect the identified artifact to determine whether it contains the
+   expected training data.
+7. Validate the result against the challenge requirements.
+8. Confirm that the result represents the required next-stage training
+   credential.
+9. Avoid reproducing the credential in public documentation.
+10. Record only the methodology and sanitized evidence.
+
 ## Security Concept
 Hidden Files Are Not Access Control
 
@@ -344,7 +376,7 @@ Never publish private SSH keys.
 The goal of evidence collection is to demonstrate the investigation process,
 not disclose secrets.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained during this exercise is intentionally excluded from
 this report.
@@ -358,7 +390,7 @@ The actual credential should never be committed to Git.
 If the credential appears in a screenshot, the screenshot should be redacted
 before being added to the repository.
 
-## Ethical Scope
+## Ethical Use
 
 This exercise was performed exclusively within the authorized OverTheWire
 Bandit training environment.
