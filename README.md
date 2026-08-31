@@ -1,25 +1,28 @@
-# CYBERNOVA CTF Training — OverTheWire Bandit
+# CYBERNOVA Security Training
 
-![Platform](https://img.shields.io/badge/Platform-OverTheWire-blue)
-![Focus](https://img.shields.io/badge/Focus-Linux%20%7C%20Networking%20%7C%20Security-red)
-![Levels](https://img.shields.io/badge/Bandit-00--33-green)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Focus](https://img.shields.io/badge/Focus-Cybersecurity-red)
+![Training](https://img.shields.io/badge/Training-CTF%20%7C%20Blue%20Team%20%7C%20Security%20Labs-blue)
+![OverTheWire](https://img.shields.io/badge/OverTheWire-Bandit%2000--33-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ## Overview
 
-This repository documents my hands-on cybersecurity training through the
-OverTheWire Bandit wargame, completed from Bandit 00 → 33.
+This repository documents my hands-on cybersecurity training across
+authorized Capture The Flag (CTF) platforms, defensive-security exercises,
+and practical security laboratories.
 
-The purpose of this project is not simply to complete CTF challenges, but to
-develop practical and transferable skills in Linux administration,
-command-line investigation, filesystem analysis, file permissions, encoding,
-compression, networking, authentication, SSH, TLS/SSL, service enumeration,
-restricted environments, and privilege-boundary analysis.
+The training collection is designed to build transferable skills in Linux,
+networking, authentication, system investigation, web security, security
+monitoring, incident analysis, privilege boundaries, and defensive security.
 
-Each challenge is approached as a technical investigation: observing system
-behavior, enumerating relevant information, forming and testing hypotheses,
-analyzing evidence, identifying the underlying security concept, and
-documenting the findings.
+Each training exercise is approached as a technical investigation: observing
+system behavior, enumerating relevant information, forming and testing
+hypotheses, analyzing evidence, identifying the underlying security concept,
+and documenting the findings.
+
+The repository is organized by training platform and security domain so that
+new CTF platforms, defensive exercises, and future cybersecurity laboratories
+can be added without restructuring the project.
 
 The exercises are maintained as a structured cybersecurity learning record
 with technical explanations, observed results, security implications,
@@ -244,7 +247,7 @@ recruiter to understand.
 
 ### Level Reports
 
-Each Bandit level has a dedicated technical report under `bandit/`.
+Each Bandit level has a dedicated technical report under `overthewire/bandit/`.
 
 The repository contains 34 level reports covering Bandit 00 → 33.
 
