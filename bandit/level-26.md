@@ -167,20 +167,48 @@ These ATT&CK mappings are presented as defensive analytical context. The Bandit 
 
 ## Techniques and Commands
 
-Representative techniques used during the investigation included:
+The investigation involved:
 
-- SSH key-based authentication.
-- Interactive SSH session analysis.
-- Restricted-shell investigation.
-- Pseudo-terminal behavior analysis.
-- Terminal-dimension analysis.
-- Process and executable inspection.
-- Linux permission analysis.
-- Setuid execution analysis.
-- Privilege-context validation.
-- Sanitized evidence collection.
+- SSH key-based authentication
+- Interactive SSH session analysis
+- Restricted-shell investigation
+- Pseudo-terminal behavior analysis
+- Terminal-dimension analysis
+- Process and executable inspection
+- Linux permission analysis
+- Setuid execution analysis
+- Privilege-context validation
+- Execution-context analysis
+- Sanitized evidence collection
 
-Exact private keys, challenge credentials, and unnecessary challenge-specific exploit sequences are intentionally excluded from this public documentation.
+The investigation workflow was:
+
+1. Establish the authorized SSH session using the provided training credentials or key material.
+2. Observe the initial shell behavior and determine whether normal interactive command execution is available.
+3. Analyze the terminal and pseudo-terminal characteristics affecting the session.
+4. Investigate how terminal dimensions and interactive behavior influence the restricted execution environment.
+5. Inspect relevant processes, executables, ownership, and permission settings.
+6. Determine the privilege and execution context associated with the relevant executable.
+7. Interact with the restricted environment only within the authorized training challenge.
+8. Validate successful progression to the next training stage.
+9. Record only sanitized observations and evidence.
+10. Keep private keys, challenge credentials, and challenge-specific bypass procedures outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    ssh -p <ssh-port> -i <authorized-key> <training-user>@<authorized-host>
+
+    stty size
+
+    ps
+
+    ls -la <authorized-path>
+
+    file <authorized-executable>
+
+The exact SSH key material, challenge-specific executable names, terminal manipulation sequence, shell-bypass procedure, and credential output are intentionally omitted from the public documentation.
+
+The purpose of this section is to document the investigation methodology, Linux terminal behavior, execution context, and defensive relevance without publishing unnecessary operational challenge details.
 
 ---
 
