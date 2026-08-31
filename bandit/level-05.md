@@ -475,7 +475,7 @@ Preserve original evidence locally if necessary.
 
 The objective is to prove technical competency rather than publish secrets.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained from this level is intentionally excluded from the
 repository.
@@ -486,7 +486,7 @@ Public documentation uses:
 
 No valid Bandit credentials should be committed to GitHub.
 
-## Ethical Scope
+## Ethical Use
 
 All activity documented in this report was performed within the authorized
 OverTheWire Bandit training environment.
