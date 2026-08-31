@@ -48,14 +48,47 @@ The investigation focused on:
 
 ## Techniques and Commands
 
-Representative commands included:
+The investigation involved:
 
-```bash
-git tag -l
-git show <tag-name>
-git cat-file -t <tag-name>
-git cat-file -p <tag-name>
-```
+- Git tag enumeration
+- Git reference inspection
+- Git object-type identification
+- Git object inspection
+- Repository metadata analysis
+- Historical repository-state investigation
+- Source-control security analysis
+- Sensitive-data identification
+- Evidence redaction and credential-handling practices
+
+The investigation workflow was:
+
+1. Access the authorized training repository within the controlled environment.
+2. Enumerate available Git tags and identify references relevant to the challenge.
+3. Inspect the selected tag without modifying repository content.
+4. Determine the type of Git object referenced by the tag.
+5. Resolve and inspect the referenced object using appropriate Git metadata commands.
+6. Analyze the object for security-relevant information.
+7. Validate the finding against the authorized training objective.
+8. Record only sanitized evidence for public documentation.
+9. Keep discovered credentials and sensitive authentication material outside the public repository.
+
+Representative sanitized investigation commands may include:
+
+    git tag --list
+
+    git show <sanitized-tag>
+
+    git cat-file -t <sanitized-tag>
+
+    git cat-file -p <sanitized-tag>
+
+    git rev-parse <sanitized-tag>
+
+The exact tag name, repository address, object identifiers, challenge credential, and sensitive object content are intentionally omitted from the public documentation.
+
+The purpose of this section is to demonstrate Git reference analysis, object inspection, source-control security investigation, and secure evidence handling without publishing sensitive challenge data.
+
+---
 
 ## Security Concepts
 
