@@ -130,6 +130,57 @@ The emphasis is on verification, documentation quality, credential protection,
 and consolidation of Linux security-analysis skills developed throughout the
 Bandit series.
 
+## Techniques and Commands
+
+The final stage involved verification and documentation techniques rather than
+a separate exploitation procedure:
+
+- Authorized SSH session verification
+- Final environment inspection
+- Completion-state verification
+- README and documentation review
+- Shell and execution-context observation
+- Linux command-line investigation
+- Repository documentation validation
+- Security-concept consolidation
+- Credential exposure review
+- Sanitized evidence collection
+- Secure credential handling
+
+The verification workflow was:
+
+1. Establish the authorized SSH session within the Bandit training environment.
+2. Confirm the final execution environment.
+3. Review the available completion information.
+4. Verify that the Bandit progression has reached its final available stage.
+5. Consolidate the Linux, networking, shell, process, privilege, and Git
+   concepts demonstrated throughout the progression.
+6. Review the portfolio documentation for consistency and sensitive-data
+   exposure.
+7. Record only sanitized completion evidence.
+8. Keep challenge credentials and authentication material outside the public
+   repository.
+
+Representative sanitized investigation commands may include:
+
+    ssh -p <ssh-port> <training-user>@<authorized-host>
+
+    <sanitized-environment-inspection>
+
+    <sanitized-completion-verification>
+
+    <sanitized-documentation-review>
+
+The exact account identifier, credentials, authentication material, and
+challenge-specific completion output are intentionally omitted from the public
+documentation.
+
+The purpose of this section is to document final-stage verification,
+Linux security-analysis methodology, and secure evidence handling without
+publishing sensitive challenge data.
+
+---
+
 ## Security Concepts
 
 The complete Bandit progression provided practical exposure to a broad range of
