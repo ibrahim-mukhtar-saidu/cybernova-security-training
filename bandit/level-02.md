@@ -202,6 +202,37 @@ spaces in this filename
 
 This distinction is fundamental to reliable shell usage.
 
+## Techniques and Commands
+
+The investigation involved:
+
+- Linux filesystem enumeration
+- Directory and file inspection
+- Filename analysis
+- Handling filenames containing spaces
+- Shell argument parsing
+- Quoting and escaping techniques
+- Command-line file access
+- Exact artifact identification
+- File content inspection
+- Result validation
+- Credential protection
+- Sanitized evidence collection
+
+The investigation workflow was:
+
+1. Establish the authorized Bandit training session.
+2. Inspect the supplied directory and enumerate its contents.
+3. Identify that the target artifact uses a filename containing spaces.
+4. Account for shell word-splitting when referencing the artifact.
+5. Use appropriate quoting or escaping to address the complete filename.
+6. Inspect the identified artifact and retrieve its training data.
+7. Validate the result against the challenge requirements.
+8. Confirm that the result represents the required next-stage training
+   credential.
+9. Avoid reproducing the credential in public documentation.
+10. Record only the methodology and sanitized evidence.
+
 ## Security Concept
 Shell Argument Parsing
 
@@ -311,7 +342,7 @@ evidence/screenshots/bandit-02-file-access.png
 If the command output contains authentication material, redact the
 credential before publishing the screenshot.
 
-## Credential-Handling Note
+## Credential Handling
 
 The credential obtained during the challenge is not included in the public
 repository.
@@ -344,7 +375,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 This exercise was performed exclusively against the authorized OverTheWire
 Bandit training environment.
