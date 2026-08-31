@@ -610,7 +610,7 @@ without revealing sensitive material is sufficient evidence.
 
 ---
 
-## Credential-Handling Note
+## Credential Handling
 
 The Bandit Level 14 credential is intentionally represented as:
 
@@ -653,7 +653,7 @@ The primary value of the exercise is the development of transferable Linux,
 command-line investigation, analytical reasoning, evidence-handling, and
 security-documentation skills.
 
-## Ethical / Lab Scope
+## Ethical Use
 
 All activities documented in this report were performed against the
 authorized OverTheWire Bandit training environment.

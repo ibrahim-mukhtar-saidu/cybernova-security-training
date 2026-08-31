@@ -274,7 +274,7 @@ This provides direct evidence that the submitted credential was accepted by the 
 
 The actual credential is not required as evidence in the public repository.
 
-## Credential-Handling Policy
+## Credential Handling
 
 Credentials discovered during this exercise are considered sensitive authentication material.
 
