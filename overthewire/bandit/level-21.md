@@ -57,13 +57,12 @@ The investigation workflow was:
 
 Representative sanitized investigation commands include:
 
-    ls -la /etc/cron.d/
-
-    cat /etc/cron.d/<relevant-job>
-
-    ls -la /usr/bin/<relevant-script>
-
-    cat /usr/bin/<relevant-script>
+```bash
+ls -la /etc/cron.d/
+cat /etc/cron.d/<relevant-job>
+ls -la /usr/bin/<relevant-script>
+cat /usr/bin/<relevant-script>
+```
 
 The exact challenge filenames and sensitive credential output are intentionally omitted from the public documentation.
 
@@ -152,6 +151,17 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of Linux cron, scheduled-task analysis, shell scripts, file permissions, automated execution, credential handling, and defensive monitoring of persistence-related mechanisms.
+
+## Lessons Learned
+
+This exercise reinforced several practical Linux security and monitoring concepts:
+
+- Scheduled tasks are important security artifacts that should be reviewed during host investigations.
+- Cron jobs should be evaluated together with the scripts, commands, ownership, and permissions they reference.
+- Automatically executed scripts can create security risks when unauthorized users can modify them.
+- Execution context is important when determining the potential impact of a scheduled task.
+- Unexpected scheduled-task changes can provide useful indicators of persistence or unauthorized activity.
+- Sensitive credentials obtained during authorized testing should be excluded from public documentation.
 
 ## Limitations
 
