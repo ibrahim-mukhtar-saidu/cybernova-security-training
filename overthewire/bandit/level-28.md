@@ -200,19 +200,15 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    git clone <authorized-repository>
-
-    git status
-
-    git log --oneline --all
-
-    git log --stat
-
-    git show <sanitized-revision>
-
-    git diff <sanitized-revision> <sanitized-revision>
-
-    git log --all -- <sanitized-file>
+```bash
+git clone <authorized-repository>
+git status
+git log --oneline --all
+git log --stat
+git show <sanitized-revision>
+git diff <sanitized-revision> <sanitized-revision>
+git log --all -- <sanitized-file>
+```
 
 The exact repository address, credentials, revision identifiers, sensitive historical content, and challenge-specific authentication material are intentionally omitted from the public documentation.
 
