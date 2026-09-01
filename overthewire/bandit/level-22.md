@@ -59,11 +59,11 @@ The investigation workflow was:
 
 Representative sanitized investigation commands include:
 
-    cat /etc/cron.d/<relevant-job>
-
-    cat /usr/bin/<relevant-script>
-
-    md5sum <sanitized-input>
+```bash
+cat /etc/cron.d/<relevant-job>
+cat /usr/bin/<relevant-script>
+md5sum <sanitized-input>
+```
 
 The exact script name, generated filename, input value, and credential output are intentionally omitted from the public documentation.
 
@@ -153,6 +153,17 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of Linux cron, scheduled-task investigation, shell-script analysis, hashing operations, dynamic filenames, automated execution, and secure credential handling.
+
+## Lessons Learned
+
+This exercise reinforced several practical Linux security and monitoring concepts:
+
+- Scheduled tasks should be investigated together with the scripts and commands they execute.
+- Analysts should trace variables and command substitutions to understand automated execution behavior.
+- Hash-based filename generation can create deterministic artifacts that are useful during investigation.
+- File ownership, permissions, execution context, and output files should be evaluated as part of the same execution chain.
+- Unexpected scheduled scripts or automated file creation can provide useful indicators of persistence or unauthorized activity.
+- Sensitive credentials obtained during authorized testing should be excluded from public documentation.
 
 ## Limitations
 
