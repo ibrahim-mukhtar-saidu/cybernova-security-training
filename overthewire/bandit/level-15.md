@@ -151,6 +151,7 @@ This level required a TLS client because the service was configured to expect an
 
 The workflow was therefore:
 
+```text
 Previous Level Credential
           |
           v
