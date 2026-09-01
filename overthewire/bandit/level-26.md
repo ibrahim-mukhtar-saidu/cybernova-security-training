@@ -196,15 +196,13 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    ssh -p <ssh-port> -i <authorized-key> <training-user>@<authorized-host>
-
-    stty size
-
-    ps
-
-    ls -la <authorized-path>
-
-    file <authorized-executable>
+```bash
+ssh -p <ssh-port> -i <authorized-key> <training-user>@<authorized-host>
+stty size
+ps
+ls -la <authorized-path>
+file <authorized-executable>
+```
 
 The exact SSH key material, challenge-specific executable names, terminal manipulation sequence, shell-bypass procedure, and credential output are intentionally omitted from the public documentation.
 
