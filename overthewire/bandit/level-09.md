@@ -55,7 +55,9 @@ The Bandit Level 09 environment was accessed through SSH.
 
 Example connection:
 
-    ssh -p 2220 bandit9@bandit.labs.overthewire.org
+```bash
+ssh -p 2220 bandit9@bandit.labs.overthewire.org
+```
 
 Authentication was performed using the credential obtained from the previous
 authorized training level.
@@ -71,7 +73,9 @@ After establishing the SSH session, the working directory was inspected.
 
 Example command:
 
-    ls -la
+```bash
+ls -la
+```
 
 The purpose of this step was to determine which files were available in the
 Bandit Level 09 home directory.
@@ -90,7 +94,9 @@ The first step was therefore to inspect the file characteristics.
 
 Example command:
 
-    file <target-file>
+```bash
+file <target-file>
+```
 
 The `file` utility attempts to identify the type and characteristics of a
 file based on its contents.
@@ -107,7 +113,9 @@ from the file.
 
 Example:
 
-    strings <target-file>
+```bash
+strings <target-file>
+```
 
 The purpose of this command is to reduce a binary or mixed-content file into
 human-readable character sequences.
@@ -134,11 +142,15 @@ dataset.
 
 Examples include:
 
-    strings <target-file> | grep '<pattern>'
+```bash
+strings <target-file>
+``` | grep '<pattern>'
 
 or:
 
-    strings <target-file> | less
+```bash
+strings <target-file>
+``` | less
 
 The exact filtering strategy depends on the characteristics of the challenge
 data.
@@ -282,9 +294,13 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    strings <artifact>
+```bash
+strings <artifact>
+```
 
-    strings <artifact> | grep -E '<sanitized-pattern>'
+```bash
+strings <artifact>
+``` | grep -E '<sanitized-pattern>'
 
 The actual credential and unnecessary challenge-specific authentication
 material are intentionally excluded from this public documentation.
@@ -322,7 +338,9 @@ Identifies probable file type and characteristics.
 
 Example:
 
-    file <target-file>
+```bash
+file <target-file>
+```
 
 ### `strings`
 
@@ -330,7 +348,9 @@ Extracts printable character sequences.
 
 Example:
 
-    strings <target-file>
+```bash
+strings <target-file>
+```
 
 ### `grep`
 
@@ -338,7 +358,9 @@ Filters output according to a pattern.
 
 Example:
 
-    strings <target-file> | grep '<pattern>'
+```bash
+strings <target-file>
+``` | grep '<pattern>'
 
 ### `less`
 
@@ -346,7 +368,9 @@ Allows large command output to be inspected interactively.
 
 Example:
 
-    strings <target-file> | less
+```bash
+strings <target-file>
+``` | less
 
 ### Pipes
 
@@ -354,7 +378,9 @@ The pipe operator connects the output of one command to the input of another.
 
 Example:
 
-    strings <target-file> | grep '<pattern>'
+```bash
+strings <target-file>
+``` | grep '<pattern>'
 
 This creates a simple investigation pipeline.
 

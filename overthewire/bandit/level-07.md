@@ -289,9 +289,13 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    grep -n '<sanitized-pattern>' <artifact>
+```bash
+grep -n '<sanitized-pattern>' <artifact>
+```
 
-    grep '<sanitized-pattern>' <artifact> | <sanitized-filter>
+```bash
+grep '<sanitized-pattern>' <artifact> | <sanitized-filter>
+```
 
 The actual credential and unnecessary challenge-specific authentication
 material are intentionally excluded from this public documentation.

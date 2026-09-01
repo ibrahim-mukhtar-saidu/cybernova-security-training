@@ -355,15 +355,25 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    ls -la
+```bash
+ls -la
+```
 
-    file <private-key>
+```bash
+file <private-key>
+```
 
-    ls -l <private-key>
+```bash
+ls -l <private-key>
+```
 
-    chmod 600 <private-key>
+```bash
+chmod 600 <private-key>
+```
 
-    ssh -i <private-key> -p <ssh-port> <target-user>@<authorized-host>
+```bash
+ssh -i <private-key> -p <ssh-port> <target-user>@<authorized-host>
+```
 
 The actual private-key contents, credentials, account-specific authentication
 material, and unnecessary challenge infrastructure details are intentionally

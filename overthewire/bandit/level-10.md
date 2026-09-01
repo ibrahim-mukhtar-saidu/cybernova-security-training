@@ -50,7 +50,9 @@ The Bandit Level 10 environment was accessed through SSH.
 
 Example connection:
 
-    ssh -p 2220 bandit10@bandit.labs.overthewire.org
+```bash
+ssh -p 2220 bandit10@bandit.labs.overthewire.org
+```
 
 Authentication was performed using the credential obtained from the previous
 authorized training level.
@@ -67,7 +69,9 @@ inspected.
 
 Example command:
 
-    ls -la
+```bash
+ls -la
+```
 
 The purpose of the initial reconnaissance was to identify the available
 challenge artifact and determine how its contents should be processed.
@@ -139,11 +143,15 @@ The Linux `base64` utility can decode Base64-encoded data.
 
 Example:
 
-    base64 -d <target-file>
+```bash
+base64 -d <target-file>
+```
 
 An equivalent long-form option is:
 
-    base64 --decode <target-file>
+```bash
+base64 --decode <target-file>
+```
 
 The decoded output can then be inspected and validated.
 
@@ -156,12 +164,16 @@ processed as part of a larger investigation.
 
 Example:
 
-    cat <target-file> | base64 -d
+```bash
+cat <target-file> | base64 -d
+```
 
 A more direct approach is generally preferable when the input is already
 stored in a file:
 
-    base64 -d <target-file>
+```bash
+base64 -d <target-file>
+```
 
 This avoids unnecessary use of `cat` and demonstrates clearer command-line
 processing.
@@ -262,9 +274,13 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    base64 -d <encoded-file>
+```bash
+base64 -d <encoded-file>
+```
 
-    cat <encoded-file> | base64 -d
+```bash
+cat <encoded-file> | base64 -d
+```
 
 The actual credential is intentionally omitted from this public
 documentation.

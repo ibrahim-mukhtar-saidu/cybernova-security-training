@@ -53,7 +53,9 @@ training infrastructure.
 
 Example connection:
 
-    ssh -p 2220 bandit11@bandit.labs.overthewire.org
+```bash
+ssh -p 2220 bandit11@bandit.labs.overthewire.org
+```
 
 Authentication was performed using the credential obtained from the previous
 Bandit level.
@@ -69,13 +71,17 @@ The working directory was inspected after authentication.
 
 Example:
 
-    ls -la
+```bash
+ls -la
+```
 
 The challenge artifact was then identified and its contents were inspected.
 
 Example:
 
-    cat <target-file>
+```bash
+cat <target-file>
+```
 
 The resulting text did not immediately appear to be normal plaintext.
 
@@ -173,7 +179,9 @@ One appropriate approach is the `tr` command.
 
 Conceptually:
 
-    tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```bash
+tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
 
 This maps each alphabetic character to its corresponding ROT13 character.
 
@@ -207,7 +215,9 @@ The challenge data can be passed through the character-translation operation.
 
 Example:
 
-    cat <target-file> | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```bash
+cat <target-file> | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+```
 
 A direct input-redirection approach may also be used depending on the
 challenge file structure.
@@ -341,9 +351,13 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    cat <challenge-file>
+```bash
+cat <challenge-file>
+```
 
-    tr 'A-Za-z' 'N-ZA-Mn-za-m' < <challenge-file>
+```bash
+tr 'A-Za-z' 'N-ZA-Mn-za-m' < <challenge-file>
+```
 
 The actual credential is intentionally excluded from this documentation.
 

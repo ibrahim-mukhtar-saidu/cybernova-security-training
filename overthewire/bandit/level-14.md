@@ -413,9 +413,13 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    nc <authorized-host> <service-port>
+```bash
+nc <authorized-host> <service-port>
+```
 
-    printf '%s\\n' '<CURRENT_CREDENTIAL>' | nc <authorized-host> <service-port>
+```bash
+printf '%s\\n' '<CURRENT_CREDENTIAL>' | nc <authorized-host> <service-port>
+```
 
 The actual credential, challenge-specific response, and unnecessary
 authentication material are intentionally omitted from this public

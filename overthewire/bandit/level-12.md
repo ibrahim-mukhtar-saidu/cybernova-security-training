@@ -495,19 +495,31 @@ The investigation workflow was:
 
 Representative sanitized commands include:
 
-    ls -la
+```bash
+ls -la
+```
 
-    mktemp -d
+```bash
+mktemp -d
+```
 
-    cp <source-artifact> <working-copy>
+```bash
+cp <source-artifact> <working-copy>
+```
 
-    xxd -r <hex-input> <binary-output>
+```bash
+xxd -r <hex-input> <binary-output>
+```
 
-    file <artifact>
+```bash
+file <artifact>
+```
 
     <appropriate-decompression-or-archive-command> <artifact>
 
-    file <extracted-artifact>
+```bash
+file <extracted-artifact>
+```
 
 The exact challenge credential and unnecessary challenge-specific output are
 intentionally omitted from this public documentation.
