@@ -57,7 +57,9 @@ The investigation workflow was:
 
 A confirmed listener command from the investigation was:
 
-    nc -lv 31337
+```bash
+nc -lv 31337
+```
 
 This creates a TCP listener on port `31337` for the authorized training exercise.
 
@@ -149,6 +151,17 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of TCP networking, local service communication, network listeners, setuid execution, privileged processes, and secure credential handling.
+
+## Lessons Learned
+
+This exercise reinforced several practical Linux and network-security concepts:
+
+- Local TCP listeners and client connections should be understood when investigating network activity.
+- Privileged network-capable programs combine process, permission, and network security considerations.
+- Unexpected localhost listeners or connections can provide useful investigation signals.
+- Setuid execution should be evaluated together with the network behavior of the process.
+- Security analysts should correlate process execution, file permissions, and network connections when investigating privilege-related activity.
+- Sensitive credentials obtained during authorized testing should be excluded from public documentation.
 
 ## Limitations
 
