@@ -104,21 +104,16 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    git status
-
-    git diff
-
-    git add <required-file>
-
-    git diff --cached
-
-    git commit -m "<sanitized-commit-message>"
-
-    git remote -v
-
-    git branch --show-current
-
-    git push <authorized-remote> <authorized-branch>
+```bash
+git status
+git diff
+git add <required-file>
+git diff --cached
+git commit -m "<sanitized-commit-message>"
+git remote -v
+git branch --show-current
+git push <authorized-remote> <authorized-branch>
+```
 
 The exact repository address, required challenge content, credentials, authentication material, and challenge-specific validation response are intentionally omitted from the public documentation.
 
