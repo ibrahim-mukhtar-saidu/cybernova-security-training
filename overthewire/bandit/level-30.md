@@ -74,15 +74,13 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    git tag --list
-
-    git show <sanitized-tag>
-
-    git cat-file -t <sanitized-tag>
-
-    git cat-file -p <sanitized-tag>
-
-    git rev-parse <sanitized-tag>
+```bash
+git tag --list
+git show <sanitized-tag>
+git cat-file -t <sanitized-tag>
+git cat-file -p <sanitized-tag>
+git rev-parse <sanitized-tag>
+```
 
 The exact tag name, repository address, object identifiers, challenge credential, and sensitive object content are intentionally omitted from the public documentation.
 
