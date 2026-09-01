@@ -57,15 +57,13 @@ The investigation workflow was:
 
 Representative sanitized investigation commands include:
 
-    ls -la /etc/cron.d/
-
-    cat /etc/cron.d/<relevant-job>
-
-    ls -la /usr/bin/<relevant-script>
-
-    cat /usr/bin/<relevant-script>
-
-    find <authorized-directory> -maxdepth 1 -type f -ls
+```bash
+ls -la /etc/cron.d/
+cat /etc/cron.d/<relevant-job>
+ls -la /usr/bin/<relevant-script>
+cat /usr/bin/<relevant-script>
+find <authorized-directory> -maxdepth 1 -type f -ls
+```
 
 The exact challenge-specific script name, filenames, commands, and credential output are intentionally omitted from the public documentation.
 
@@ -113,15 +111,15 @@ Challenge credentials should remain outside the repository or be redacted before
 
 ## Lessons Learned
 
-This exercise reinforced several important concepts:
+This exercise reinforced several practical Linux security and monitoring concepts:
 
-1. Cron jobs can execute commands automatically without direct user interaction.
-2. Scheduled scripts should be reviewed for ownership, permissions, and execution context.
-3. Writable files or directories can become security-sensitive when accessed by automated processes.
-4. Script behavior should be analyzed together with the privileges of the process executing it.
-5. Temporary-file handling can introduce security risks when permissions and ownership are not carefully controlled.
-6. Scheduled-task activity can provide valuable SOC detection and investigation telemetry.
-7. Challenge credentials should be treated as sensitive evidence and excluded from public documentation.
+- Scheduled tasks should be investigated together with the scripts and commands they execute.
+- Analysts should evaluate file ownership and permissions when automated processes access user-controlled locations.
+- Writable directories can become security-sensitive when privileged or automated processes operate within them.
+- Script execution context is important when assessing the security impact of automated file processing.
+- Temporary-file handling should be reviewed carefully because unsafe permissions or ownership can create security risks.
+- Unexpected cron activity, file processing, or child-process creation can provide useful SOC investigation signals.
+- Sensitive credentials obtained during authorized testing should be excluded from public documentation.
 
 ## Training Outcome
 
