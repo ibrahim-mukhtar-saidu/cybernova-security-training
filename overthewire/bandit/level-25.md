@@ -155,15 +155,13 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    ssh -p <ssh-port> <training-user>@<authorized-host>
-
-    ps
-
-    ls -la
-
-    file <authorized-executable>
-
-    <sanitized-environment-inspection-command>
+```bash
+ssh -p <ssh-port> <training-user>@<authorized-host>
+ps
+ls -la
+file <authorized-executable>
+<sanitized-environment-inspection-command>
+```
 
 The exact challenge-specific executable, authentication material, shell-bypass procedure, and credential output are intentionally omitted from the public documentation.
 
