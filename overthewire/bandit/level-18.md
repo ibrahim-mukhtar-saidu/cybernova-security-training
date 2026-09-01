@@ -43,7 +43,9 @@ The investigation involved:
 
 A sanitized command pattern is:
 
-    ssh -p <ssh-port> <training-user>@<authorized-host> <authorized-command>
+```bash
+ssh -p <ssh-port> <training-user>@<authorized-host> <authorized-command>
+```
 
 This demonstrates that SSH can be used to request a specific remote command rather than relying exclusively on an interactive shell.
 
@@ -108,9 +110,9 @@ Recommended evidence:
 
 Example evidence paths:
 
-    evidence/screenshots/bandit-18-ssh-restricted.png
-    evidence/screenshots/bandit-18-command-execution.png
-    evidence/screenshots/bandit-18-result-redacted.png
+- `evidence/screenshots/bandit-18-ssh-restricted.png`
+- `evidence/screenshots/bandit-18-command-execution.png`
+- `evidence/screenshots/bandit-18-result-redacted.png`
 
 Sensitive passwords must not appear in committed screenshots.
 

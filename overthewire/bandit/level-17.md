@@ -42,7 +42,9 @@ The investigation involved:
 
 A sanitized representative comparison command is:
 
-    diff <password-file-1> <password-file-2>
+```bash
+diff <password-file-1> <password-file-2>
+```
 
 The comparison identifies the differing entry without documenting the actual challenge credential or relying on placeholder filenames that were not used in this repository.
 
