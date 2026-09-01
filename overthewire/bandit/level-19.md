@@ -44,8 +44,10 @@ The investigation involved:
 
 A sanitized inspection workflow is:
 
-    ls -l <setuid-executable>
-    file <setuid-executable>
+```bash
+ls -l <setuid-executable>
+file <setuid-executable>
+```
 
 The permission and ownership information were used to determine whether the executable had the setuid bit and which account owned it.
 
@@ -121,6 +123,16 @@ Challenge credentials should remain outside the public project directory or be r
 ## Learning Outcome
 
 This level strengthened practical understanding of Linux file permissions, setuid behavior, effective privileges, privilege boundaries, and secure credential handling.
+
+## Lessons Learned
+
+This exercise reinforced several practical Linux security concepts:
+
+- Special permission bits can change the security context of executable programs.
+- File ownership and effective user identity are important during privilege investigations.
+- Unexpected setuid binaries or permission changes can represent meaningful security-monitoring signals.
+- Security analysts should examine both executable configuration and execution context when investigating privilege-related activity.
+- Sensitive credentials obtained during authorized testing should be excluded from public documentation.
 
 ## Limitations
 
