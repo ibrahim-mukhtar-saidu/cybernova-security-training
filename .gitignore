@@ -11,3 +11,11 @@ key.txt
 # Local challenge workspaces
 bandit*-work/
 bandit-passwords.txt
+
+# TryHackMe local challenge artifacts
+tryhackme/evidence/**/private/
+tryhackme/evidence/**/raw/
+tryhackme/**/credentials*
+tryhackme/**/passwords*
+tryhackme/**/secrets*
+tryhackme/**/tokens*
