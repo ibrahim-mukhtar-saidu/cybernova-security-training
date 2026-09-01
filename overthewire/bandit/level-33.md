@@ -163,13 +163,12 @@ The verification workflow was:
 
 Representative sanitized investigation commands may include:
 
-    ssh -p <ssh-port> <training-user>@<authorized-host>
-
-    <sanitized-environment-inspection>
-
-    <sanitized-completion-verification>
-
-    <sanitized-documentation-review>
+```bash
+ssh -p <ssh-port> <training-user>@<authorized-host>
+<sanitized-environment-inspection>
+<sanitized-completion-verification>
+<sanitized-documentation-review>
+```
 
 The exact account identifier, credentials, authentication material, and
 challenge-specific completion output are intentionally omitted from the public
