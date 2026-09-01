@@ -65,7 +65,7 @@ ls -la
 
 The relevant file was:
 
-.bandit14.password
+<previous-level-credential-file>
 
 Its permissions indicated that it was readable by the bandit15 user.
 
