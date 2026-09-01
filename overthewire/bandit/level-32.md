@@ -281,15 +281,13 @@ The investigation workflow was:
 
 Representative sanitized investigation commands may include:
 
-    ssh -p <ssh-port> <training-user>@<authorized-host>
-
-    <sanitized-command-observation>
-
-    <sanitized-environment-inspection>
-
-    <sanitized-process-inspection>
-
-    <sanitized-execution-context-check>
+```bash
+ssh -p <ssh-port> <training-user>@<authorized-host>
+<sanitized-command-observation>
+<sanitized-environment-inspection>
+<sanitized-process-inspection>
+<sanitized-execution-context-check>
+```
 
 The exact challenge-specific shell-bypass sequence, credentials, account identifiers, and authentication material are intentionally omitted from the public documentation.
 
