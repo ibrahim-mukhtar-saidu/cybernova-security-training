@@ -155,15 +155,18 @@ The investigation workflow was:
 
 Representative sanitized command patterns may include:
 
-    nc <authorized-host> <service-port>
-
-    <candidate-generation-command> | <authorized-testing-workflow>
-
-    <response-validation-command>
+```bash
+nc <authorized-host> <service-port>
+<candidate-generation-command> | <authorized-testing-workflow>
+<response-validation-command>
+```
 
 The exact service address, candidate values, authentication implementation, successful credential, and reusable brute-force automation are intentionally omitted from the public documentation.
 
 The purpose of this section is to document the investigation methodology and defensive learning rather than publish operational authentication-testing material.
+
+---
+
 ## Response Analysis
 
 An important part of the investigation was distinguishing unsuccessful authentication attempts from the successful response.
